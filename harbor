@@ -1,3 +1,6 @@
+
+yum install -y python-setuptools
+easy_install pip
 pip install docker-compose
 wget https://storage.googleapis.com/harbor-releases/release-1.4.0/harbor-offline-installer-v1.4.0.tgz
 ./install.sh
