@@ -1,0 +1,8 @@
+yum install docker-engine  -y
+
+pip install docker-compose
+wget https://storage.googleapis.com/harbor-releases/release-1.4.0/harbor-offline-installer-v1.4.0.tgz
+./install.sh
+
+vim /usr/lib/systemd/system/docker.service
+ExecStart=/usr/bin/dockerd --insecure-registry x.x.x.x
