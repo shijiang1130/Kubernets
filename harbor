@@ -6,3 +6,29 @@ wget https://storage.googleapis.com/harbor-releases/release-1.4.0/harbor-offline
 
 vim /usr/lib/systemd/system/docker.service
 ExecStart=/usr/bin/dockerd --insecure-registry x.x.x.x
+
+
+# docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+vmware/harbor-jobservice     v1.1.2              ac332f9bd31c        10 days ago         162.9 MB
+vmware/harbor-ui             v1.1.2              803897be484a        10 days ago         182.9 MB
+vmware/harbor-adminserver    v1.1.2              360b214594e7        10 days ago         141.6 MB
+vmware/harbor-db             v1.1.2              6f71ee20fe0c        10 days ago         328.5 MB
+vmware/registry              2.6.1-photon        0f6c96580032        4 weeks ago         150.3 MB
+vmware/harbor-notary-db      mariadb-10.1.10     64ed814665c6        10 weeks ago        324.1 MB
+vmware/nginx                 1.11.5-patched      8ddadb143133        10 weeks ago        199.2 MB
+vmware/notary-photon         signer-0.5.0        b1eda7d10640        11 weeks ago        155.7 MB
+vmware/notary-photon         server-0.5.0        6e2646682e3c        3 months ago        156.9 MB
+vmware/harbor-log            v1.1.2              9c46a7b5e517        4 months ago        192.4 MB
+photon                       1.0                 e6e4e4a2ba1b        11 months ago       127.5 MB
+
+# docker-compose ps
+       Name                     Command               State                                Ports                               
+------------------------------------------------------------------------------------------------------------------------------
+harbor-adminserver   /harbor/harbor_adminserver       Up                                                                       
+harbor-db            docker-entrypoint.sh mysqld      Up      3306/tcp                                                         
+harbor-jobservice    /harbor/harbor_jobservice        Up                                                                       
+harbor-log           /bin/sh -c crond && rm -f  ...   Up      127.0.0.1:1514->514/tcp                                          
+harbor-ui            /harbor/harbor_ui                Up                                                                       
+nginx                nginx -g daemon off;             Up      0.0.0.0:443->443/tcp, 0.0.0.0:4443->4443/tcp, 0.0.0.0:80->80/tcp 
+registry             /entrypoint.sh serve /etc/ ...   Up      5000/tcp       
