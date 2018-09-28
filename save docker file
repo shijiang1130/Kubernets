@@ -1,1 +1,2 @@
 docker pull gcr.io/google-samples/hello-go-gke:1.0
+docker save gcr.io/google-samples/hello-go-gke > hello-go-gke.tar
