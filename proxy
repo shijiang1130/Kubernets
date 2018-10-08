@@ -1,0 +1,36 @@
+CentOS:
+sudo yum install python-setuptools && easy_install pip
+sudo pip install shadowsocks
+配置
+找个地方放shadowsocks的配置文件，一般放到 /etc下面：
+
+sudo vi /etc/shadowsocks.json
+测试启动
+配置文件的路径改成自己的，如：/etc/shadowsocks.json
+
+前端启动：sslocal -c /home/xx/Software/ShadowsocksConfig/shadowsocks.json；
+后端启动：sslocal -c /home/xx/Software/ShadowsocksConfig/shadowsocks.json -d start；
+后端停止：sslocal -c /home/xx/Software/ShadowsocksConfig/shadowsocks.json -d stop；
+重启(修改配置要重启才生效)：sslocal -c /home/xx/Software/ShadowsocksConfig/shadowsocks.json -d restart
+开机自启
+以下使用Systemd来实现shadowsocks开机自启。
+
+sudo vim /etc/systemd/system/shadowsocks.service
+在里面填写如下内容：
+
+[Unit]
+Description=Shadowsocks Client Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/sslocal -c /home/xx/Software/ShadowsocksConfig/shadowsocks.json
+
+[Install]
+WantedBy=multi-user.target
+把/home/xx/Software/ShadowsocksConfig/shadowsocks.json修改为你的shadowsocks.json路径，如：/etc/shadowsocks.json
+
+配置生效：
+
+systemctl enable /etc/systemd/system/shadowsocks.service
