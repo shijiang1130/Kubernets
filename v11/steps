@@ -26,3 +26,15 @@ kubectl describe pod kube-flannel-ds-jnbwd  -n kube-system
 docker pull quay.io/coreos/flannel:v0.10.0-amd64
 kubectl describe pod kube-flannel-ds-jnbwd
 kubeadm token create --print-join-command
+
+
+Run the following commands on the kubernetes master host.
+Use curl to get the installer bundle: 
+curl -L -O https://github.com/contiv/install/releases/download/$VERSION/contiv-$VERSION.tgz
+Extract the install bundle 
+tar oxf contiv-$VERSION.tgz.
+Change directories to the extracted folder 
+cd contiv-$VERSION
+To install Contiv with VXLAN:
+sudo ./install/k8s/install.sh -n $CONTIV_MASTER
+NOTE: Use the same IP for CONTIV_MASTER as you use for --api-advertise-addresses in kubeadm init.
