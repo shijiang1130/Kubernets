@@ -1,0 +1,1 @@
+kubectl run centos --rm -i --tty --image centos:7.0.1406 -- bash
