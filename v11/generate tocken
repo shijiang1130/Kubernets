@@ -5,3 +5,7 @@ openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outfor
 node:
 
 kubeadm join --token AAA --discovery-token-ca-cert-hash sha256:BBB CCC:6443
+
+
+
+kubeadm token create --print-join-command 
