@@ -1,0 +1,4 @@
+sudo systemctl stop docker
+sudo cp -au /var/lib/docker /var/lib/docker.bk
+echo '{ "storage-driver": "overlay2" }' | sudo tee /etc/docker/daemon.json
+sudo systemctl start docker
