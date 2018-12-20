@@ -1,3 +1,10 @@
 1. flannel
 2. proxy
 3. pause
+
+ docker images
+REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
+k8s.gcr.io/kube-proxy-amd6    v1.11.2             7aa2f9bdaf69        About an hour ago   99.6 MB
+quay.io/coreos/flannel        v0.10.0-amd64       c4a564d0e88f        About an hour ago   45.3 MB
+k8s.gcr.io/kube-proxy-amd64   v1.11.2             46a3cd725628        4 months ago        97.8 MB
+k8s.gcr.io/pause              3.1                 f9d5de079539        4 years ago         240 kB
