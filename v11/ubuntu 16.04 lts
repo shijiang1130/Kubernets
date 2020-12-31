@@ -1,20 +1,3 @@
-apt-get install kubeadm=1.11.2-00 kubectl=1.11.2-00  kubelet=1.11.2-00
-/etc/cni/net.d# cat 10-flannel.conflist 
-{
-  "name": "cbr0",
-  "plugins": [
-    {
-      "type": "flannel",
-      "delegate": {
-        "hairpinMode": true,
-        "isDefaultGateway": true
-      }
-    },
-    {
-      "type": "portmap",
-      "capabilities": {
-        "portMappings": true
-      }
-    }
-  ]
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:79ca2f5b55895ad1c8c869771be116f365f257b5fde6ab65ca1d80a7961885ad
+size 399
