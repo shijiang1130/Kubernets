@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-ss
+  labels:
+    app: mysql-ss
+spec:
+  ports:
+  - name: mysql-ss
+    port: 3306
+  selector:
+    app: mysql-ss
