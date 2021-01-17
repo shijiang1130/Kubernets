@@ -1,3 +1,172 @@
-dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
-yum install docker-ce
-petyb/cobbler-c7
+CentOS Linux release 7.4.1708 (Core) 
+
+yum install epel-release -y
+yum install -y epel-release cobbler cobbler-web dhcp tftp-server pykickstart httpd
+-------------------/etc/collber/setttings---------------------------
+allow_duplicate_hostnames: 0
+allow_duplicate_ips: 0
+allow_duplicate_macs: 0
+allow_dynamic_settings: 0
+anamon_enabled: 0
+authn_pam_service: "login"
+auth_token_expiration: 3600
+build_reporting_enabled: 0
+build_reporting_sender: ""
+build_reporting_email: [ 'root@localhost' ]
+build_reporting_smtp_server: "localhost"
+build_reporting_subject: ""
+build_reporting_ignorelist: [ "" ]
+cheetah_import_whitelist:
+ - "random"
+ - "re"
+ - "time"
+createrepo_flags: "-c cache -s sha"
+default_kickstart: /var/lib/cobbler/kickstarts/default.ks
+default_name_servers: []
+default_ownership:
+ - "admin"
+default_password_crypted: "$1$mF86/UHC$WvcIcX2t6crBz2onWxyac."
+default_template_type: "cheetah"
+default_virt_bridge: xenbr0
+default_virt_file_size: 5
+default_virt_ram: 512
+default_virt_type: xenpv
+enable_gpxe: 0
+enable_menu: 1
+func_auto_setup: 0
+func_master: overlord.example.org
+http_port: 80
+kernel_options:
+ ksdevice: bootif
+ lang: ' '
+ text: ~
+kernel_options_s390x:
+ RUNKS: 1
+ ramdisk_size: 40000
+ root: /dev/ram0
+ ro: ~
+ ip: off
+ vnc: ~
+ldap_server: "ldap.example.com"
+ldap_base_dn: "DC=example,DC=com"
+ldap_port: 389
+ldap_tls: 1
+ldap_anonymous_bind: 1
+ldap_search_bind_dn: ''
+ldap_search_passwd: ''
+ldap_search_prefix: 'uid='
+ldap_tls_cacertfile: ''
+ldap_tls_keyfile: ''
+ldap_tls_certfile: ''
+mgmt_classes: []
+mgmt_parameters:
+ from_cobbler: 1
+puppet_auto_setup: 0
+sign_puppet_certs_automatically: 0
+puppetca_path: "/usr/bin/puppet"
+remove_old_puppet_certs_automatically: 0
+manage_dhcp: 1
+manage_dns: 0
+bind_chroot_path: ""
+bind_master: 192.168.1.72
+manage_genders: 0
+bind_manage_ipmi: 0
+manage_tftpd: 1
+manage_rsync: 0
+manage_forward_zones: []
+manage_reverse_zones: []
+next_server: 192.168.1.72 
+power_management_default_type: 'ipmitool'
+power_template_dir: "/etc/cobbler/power"
+pxe_just_once: 1
+pxe_template_dir: "/etc/cobbler/pxe"
+consoles: "/var/consoles"
+redhat_management_type: "off"
+redhat_management_server: "xmlrpc.rhn.redhat.com"
+redhat_management_key: ""
+redhat_management_permissive: 0
+register_new_installs: 0
+reposync_flags: "-l -n -d"
+restart_dns: 1
+restart_dhcp: 1
+run_install_triggers: 1
+scm_track_enabled: 0
+scm_track_mode: "git"
+server: 192.168.1.72
+client_use_localhost: 0
+client_use_https: 0
+snippetsdir: /var/lib/cobbler/snippets
+template_remote_kickstarts: 0
+virt_auto_boot: 1
+webdir: /var/www/cobbler
+xmlrpc_port: 25151
+yum_post_install_mirror: 1
+yum_distro_priority: 1
+yumdownloader_flags: "--resolve"
+serializer_pretty_json: 0
+replicate_rsync_options: "-avzH"
+replicate_repo_rsync_options: "-avzH"
+always_write_dhcp_entries: 0
+proxy_url_ext: ""
+proxy_url_int: ""
+
+----------------------------------------------
+
+cobbler check
+https://192.168.1.72/cobbler_web/
+cobbler:cobbler
+cobbler import --path=/mnt/ubuntu --name=ubuntu --kickstart=/mnt/ubuntu/preseed/ubuntu-server.seed
+
+---------------seed--------------------------
+
+d-i     debian-installer/locale string en_US.UTF-8
+d-i     debian-installer/splash boolean false
+d-i     console-setup/ask_detect        boolean false
+d-i     console-setup/layoutcode        string us
+d-i     console-setup/variantcode       string
+d-i     netcfg/get_nameservers  string
+d-i     netcfg/get_ipaddress    string
+d-i     netcfg/get_netmask      string 255.255.255.0
+d-i     netcfg/get_gateway      string
+d-i     netcfg/confirm_static   boolean true
+d-i     clock-setup/utc boolean true
+d-i     partman-auto/method string regular
+d-i     partman-lvm/device_remove_lvm boolean true
+d-i     partman-lvm/confirm boolean true
+d-i     partman/confirm_write_new_label boolean true
+d-i     partman/choose_partition        select Finish partitioning and write changes to disk
+d-i     partman/confirm boolean true
+d-i     partman/confirm_nooverwrite boolean true
+d-i     partman/default_filesystem string ext3
+d-i     clock-setup/utc boolean true
+d-i     clock-setup/ntp boolean true
+d-i     clock-setup/ntp-server  string ntp.ubuntu.com
+d-i     base-installer/kernel/image     string linux-server
+d-i     passwd/root-login       boolean false
+d-i     passwd/make-user        boolean true
+d-i     passwd/user-fullname    string ubuntu
+d-i     passwd/username string ubuntu
+d-i     passwd/user-password-crypted    password $6$.1eHH0iY$ArGzKX2YeQ3G6U.mlOO3A.NaL22Ewgz8Fi4qqz.Ns7EMKjEJRIW2Pm/TikDptZpuu7I92frytmk5YeL.9fRY4.
+d-i     passwd/user-uid string
+d-i     user-setup/allow-password-weak  boolean false
+d-i     user-setup/encrypt-home boolean false
+d-i     passwd/user-default-groups      string adm cdrom dialout lpadmin plugdev sambashare
+d-i     apt-setup/services-select       multiselect security
+d-i     apt-setup/security_host string security.ubuntu.com
+d-i     apt-setup/security_path string /ubuntu
+d-i     debian-installer/allow_unauthenticated  string false
+d-i     pkgsel/upgrade  select safe-upgrade
+d-i     pkgsel/language-packs   multiselect
+d-i     pkgsel/update-policy    select none
+d-i     pkgsel/updatedb boolean true
+d-i     grub-installer/skip     boolean false
+d-i     lilo-installer/skip     boolean false
+d-i     grub-installer/only_debian      boolean true
+d-i     grub-installer/with_other_os    boolean true
+d-i     finish-install/keep-consoles    boolean false
+d-i     finish-install/reboot_in_progress       note
+d-i     cdrom-detect/eject      boolean true
+d-i     debian-installer/exit/halt      boolean false
+d-i     debian-installer/exit/poweroff  boolean false
+d-i     pkgsel/include string byobu vim openssh-server
+byobu   byobu/launch-by-default boolean true
