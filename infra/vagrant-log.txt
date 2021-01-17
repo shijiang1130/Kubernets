@@ -1,0 +1,1945 @@
+D:\upgrade>vagrant up
+==> vagrant: A new version of Vagrant is available: 2.2.14 (installed version: 2.2.9)!
+==> vagrant: To upgrade visit: https://www.vagrantup.com/downloads.html
+
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'centos/7' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+==> default: Loading metadata for box 'centos/7'
+    default: URL: https://vagrantcloud.com/centos/7
+==> default: Adding box 'centos/7' (v2004.01) for provider: virtualbox
+    default: Downloading: https://vagrantcloud.com/centos/boxes/7/versions/2004.01/providers/virtualbox.box
+Download redirected to host: cloud.centos.org
+Progress: 0% (Rate: 9346/s, Estimated time remaining: 12:18:14)
+==> default: Waiting for cleanup before exiting...
+    default:
+==> default: Box download was interrupted. Exiting.
+    default: Calculating and comparing box checksum...
+The checksum of the downloaded box did not match the expected
+value. Please verify that you have the proper URL setup and that
+you're downloading the proper file.
+
+Expected: 7e83943defcb5c4e9bebbe4184cce4585c82805a15e936b01b1e893b63dee2c5
+Received: 25fe54fa34eb659e757cfc21c196c133c8a4ee286149c4c6b19c0aa6461bcd03
+
+
+D:\upgrade>vagrant box add centos/7 CentOS-7-x86_64-Vagrant-2004_01.VirtualBox.box
+==> box: Box file was not detected as metadata. Adding it directly...
+==> box: Adding box 'centos/7' (v0) for provider:
+    box: Unpacking necessary files from: file://D:/upgrade/CentOS-7-x86_64-Vagrant-2004_01.VirtualBox.box
+    box:
+==> box: Successfully added box 'centos/7' (v0) for 'virtualbox'!
+
+D:\upgrade>vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'centos/7'...
+==> default: Matching MAC address for NAT networking...
+==> default: Setting the name of the VM: upgrade_default_1610855555615_36939
+Vagrant is currently configured to create VirtualBox synced folders with
+the `SharedFoldersEnableSymlinksCreate` option enabled. If the Vagrant
+guest is not trusted, you may want to disable this option. For more
+information on this option, please refer to the VirtualBox manual:
+
+  https://www.virtualbox.org/manual/ch04.html#sharedfolders
+
+This option can be disabled globally with an environment variable:
+
+  VAGRANT_DISABLE_VBOXSYMLINKCREATE=1
+
+or on a per folder basis within the Vagrantfile:
+
+  config.vm.synced_folder '/host/path', '/guest/path', SharedFoldersEnableSymlinksCreate: false
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: bridged
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default:
+    default: Vagrant insecure key detected. Vagrant will automatically replace
+    default: this with a newly generated keypair for better security.
+    default:
+    default: Inserting generated public key within guest...
+    default: Removing insecure key from the guest if it's present...
+    default: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+    default: No guest additions were detected on the base box for this VM! Guest
+    default: additions are required for forwarded ports, shared folders, host only
+    default: networking, and more. If SSH fails on this machine, please install
+    default: the guest additions and repackage the box to continue.
+    default:
+    default: This is not an error message; everything may continue to work properly,
+    default: in which case you may ignore this message.
+==> default: Configuring and enabling network interfaces...
+==> default: Rsyncing folder: /cygdrive/d/upgrade/ => /vagrant
+==> default: Mounting shared folders...
+    default: /usr/src/cobbler => D:/upgrade
+Vagrant was unable to mount VirtualBox shared folders. This is usually
+because the filesystem "vboxsf" is not available. This filesystem is
+made available via the VirtualBox Guest Additions and kernel module.
+Please verify that these guest additions are properly installed in the
+guest. This is not a bug in Vagrant and is usually caused by a faulty
+Vagrant box. For context, the command attempted was:
+
+mount -t vboxsf -o uid=1000,gid=1000 usr_src_cobbler /usr/src/cobbler
+
+The error output from the command was:
+
+mount: unknown filesystem type 'vboxsf'
+
+D:\upgrade>vagrant destroy
+    default: Are you sure you want to destroy the 'default' VM? [y/N] y
+==> default: Forcing shutdown of VM...
+==> default: Destroying VM and associated drives...
+
+D:\upgrade>vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'centos/7'...
+==> default: Matching MAC address for NAT networking...
+==> default: Setting the name of the VM: upgrade_default_1610856471104_13656
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: bridged
+==> default: Forwarding ports...
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default:
+    default: Vagrant insecure key detected. Vagrant will automatically replace
+    default: this with a newly generated keypair for better security.
+    default:
+    default: Inserting generated public key within guest...
+    default: Removing insecure key from the guest if it's present...
+    default: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+    default: No guest additions were detected on the base box for this VM! Guest
+    default: additions are required for forwarded ports, shared folders, host only
+    default: networking, and more. If SSH fails on this machine, please install
+    default: the guest additions and repackage the box to continue.
+    default:
+    default: This is not an error message; everything may continue to work properly,
+    default: in which case you may ignore this message.
+==> default: Configuring and enabling network interfaces...
+==> default: Rsyncing folder: /cygdrive/d/upgrade/ => /vagrant
+==> default: Running provisioner: shell...
+    default: Running: inline script
+    default: Loaded plugins: fastestmirror
+    default: Determining fastest mirrors
+    default:  * base: mirrors.huaweicloud.com
+    default:  * extras: mirrors.bfsu.edu.cn
+    default:  * updates: mirrors.huaweicloud.com
+    default: Resolving Dependencies
+    default: --> Running transaction check
+    default: ---> Package NetworkManager.x86_64 1:1.18.4-3.el7 will be updated
+    default: ---> Package NetworkManager.x86_64 1:1.18.8-2.el7_9 will be an update
+    default: ---> Package NetworkManager-libnm.x86_64 1:1.18.4-3.el7 will be updated
+    default: ---> Package NetworkManager-libnm.x86_64 1:1.18.8-2.el7_9 will be an update
+    default: ---> Package NetworkManager-team.x86_64 1:1.18.4-3.el7 will be updated
+    default: ---> Package NetworkManager-team.x86_64 1:1.18.8-2.el7_9 will be an update
+    default: ---> Package NetworkManager-tui.x86_64 1:1.18.4-3.el7 will be updated
+    default: ---> Package NetworkManager-tui.x86_64 1:1.18.8-2.el7_9 will be an update
+    default: ---> Package bind-export-libs.x86_64 32:9.11.4-16.P2.el7_8.2 will be updated
+    default: ---> Package bind-export-libs.x86_64 32:9.11.4-26.P2.el7_9.3 will be an update
+    default: ---> Package binutils.x86_64 0:2.27-43.base.el7 will be updated
+    default: ---> Package binutils.x86_64 0:2.27-44.base.el7 will be an update
+    default: ---> Package ca-certificates.noarch 0:2019.2.32-76.el7_7 will be updated
+    default: ---> Package ca-certificates.noarch 0:2020.2.41-70.0.el7_8 will be an update
+    default: ---> Package centos-release.x86_64 0:7-8.2003.0.el7.centos will be updated
+    default: ---> Package centos-release.x86_64 0:7-9.2009.1.el7.centos will be an update
+    default: ---> Package chkconfig.x86_64 0:1.7.4-1.el7 will be updated
+    default: ---> Package chkconfig.x86_64 0:1.7.6-1.el7 will be an update
+    default: ---> Package coreutils.x86_64 0:8.22-24.el7 will be updated
+    default: ---> Package coreutils.x86_64 0:8.22-24.el7_9.2 will be an update
+    default: ---> Package cpio.x86_64 0:2.11-27.el7 will be updated
+    default: ---> Package cpio.x86_64 0:2.11-28.el7 will be an update
+    default: ---> Package cups-libs.x86_64 1:1.6.3-43.el7 will be updated
+    default: ---> Package cups-libs.x86_64 1:1.6.3-51.el7 will be an update
+    default: ---> Package curl.x86_64 0:7.29.0-57.el7 will be updated
+    default: ---> Package curl.x86_64 0:7.29.0-59.el7_9.1 will be an update
+    default: ---> Package dbus.x86_64 1:1.10.24-13.el7_6 will be updated
+    default: ---> Package dbus.x86_64 1:1.10.24-15.el7 will be an update
+    default: ---> Package dbus-libs.x86_64 1:1.10.24-13.el7_6 will be updated
+    default: ---> Package dbus-libs.x86_64 1:1.10.24-15.el7 will be an update
+    default: ---> Package device-mapper.x86_64 7:1.02.164-7.el7_8.1 will be updated
+    default: ---> Package device-mapper.x86_64 7:1.02.170-6.el7_9.3 will be an update
+    default: ---> Package device-mapper-libs.x86_64 7:1.02.164-7.el7_8.1 will be updated
+    default: ---> Package device-mapper-libs.x86_64 7:1.02.170-6.el7_9.3 will be an update
+    default: ---> Package dhclient.x86_64 12:4.2.5-79.el7.centos will be updated
+    default: ---> Package dhclient.x86_64 12:4.2.5-82.el7.centos will be an update
+    default: ---> Package dhcp-common.x86_64 12:4.2.5-79.el7.centos will be updated
+    default: ---> Package dhcp-common.x86_64 12:4.2.5-82.el7.centos will be an update
+    default: ---> Package dhcp-libs.x86_64 12:4.2.5-79.el7.centos will be updated
+    default: ---> Package dhcp-libs.x86_64 12:4.2.5-82.el7.centos will be an update
+    default: ---> Package dmidecode.x86_64 1:3.2-3.el7 will be updated
+    default: ---> Package dmidecode.x86_64 1:3.2-5.el7 will be an update
+    default: ---> Package dracut.x86_64 0:033-568.el7 will be updated
+    default: ---> Package dracut.x86_64 0:033-572.el7 will be an update
+    default: ---> Package e2fsprogs.x86_64 0:1.42.9-17.el7 will be updated
+    default: ---> Package e2fsprogs.x86_64 0:1.42.9-19.el7 will be an update
+    default: ---> Package e2fsprogs-libs.x86_64 0:1.42.9-17.el7 will be updated
+    default: ---> Package e2fsprogs-libs.x86_64 0:1.42.9-19.el7 will be an update
+    default: ---> Package elfutils-default-yama-scope.noarch 0:0.176-4.el7 will be updated
+    default: ---> Package elfutils-default-yama-scope.noarch 0:0.176-5.el7 will be an update
+    default: ---> Package elfutils-libelf.x86_64 0:0.176-4.el7 will be updated
+    default: ---> Package elfutils-libelf.x86_64 0:0.176-5.el7 will be an update
+    default: ---> Package elfutils-libs.x86_64 0:0.176-4.el7 will be updated
+    default: ---> Package elfutils-libs.x86_64 0:0.176-5.el7 will be an update
+    default: ---> Package expat.x86_64 0:2.1.0-11.el7 will be updated
+    default: ---> Package expat.x86_64 0:2.1.0-12.el7 will be an update
+    default: ---> Package file.x86_64 0:5.11-36.el7 will be updated
+    default: ---> Package file.x86_64 0:5.11-37.el7 will be an update
+    default: ---> Package file-libs.x86_64 0:5.11-36.el7 will be updated
+    default: ---> Package file-libs.x86_64 0:5.11-37.el7 will be an update
+    default: ---> Package firewalld.noarch 0:0.6.3-8.el7_8.1 will be updated
+    default: ---> Package firewalld.noarch 0:0.6.3-12.el7 will be an update
+    default: ---> Package firewalld-filesystem.noarch 0:0.6.3-8.el7_8.1 will be updated
+    default: ---> Package firewalld-filesystem.noarch 0:0.6.3-12.el7 will be an update
+    default: ---> Package freetype.x86_64 0:2.8-14.el7 will be updated
+    default: ---> Package freetype.x86_64 0:2.8-14.el7_9.1 will be an update
+    default: ---> Package glib2.x86_64 0:2.56.1-5.el7 will be updated
+    default: ---> Package glib2.x86_64 0:2.56.1-8.el7 will be an update
+    default: ---> Package glibc.x86_64 0:2.17-307.el7.1 will be updated
+    default: ---> Package glibc.x86_64 0:2.17-317.el7 will be an update
+    default: ---> Package glibc-common.x86_64 0:2.17-307.el7.1 will be updated
+    default: ---> Package glibc-common.x86_64 0:2.17-317.el7 will be an update
+    default: ---> Package grub2.x86_64 1:2.02-0.81.el7.centos will be updated
+    default: ---> Package grub2.x86_64 1:2.02-0.86.el7.centos will be an update
+    default: ---> Package grub2-common.noarch 1:2.02-0.81.el7.centos will be updated
+    default: ---> Package grub2-common.noarch 1:2.02-0.86.el7.centos will be an update
+    default: ---> Package grub2-pc.x86_64 1:2.02-0.81.el7.centos will be updated
+    default: ---> Package grub2-pc.x86_64 1:2.02-0.86.el7.centos will be an update
+    default: ---> Package grub2-pc-modules.noarch 1:2.02-0.81.el7.centos will be updated
+    default: ---> Package grub2-pc-modules.noarch 1:2.02-0.86.el7.centos will be an update
+    default: ---> Package grub2-tools.x86_64 1:2.02-0.81.el7.centos will be updated
+    default: ---> Package grub2-tools.x86_64 1:2.02-0.86.el7.centos will be an update
+    default: ---> Package grub2-tools-extra.x86_64 1:2.02-0.81.el7.centos will be updated
+    default: ---> Package grub2-tools-extra.x86_64 1:2.02-0.86.el7.centos will be an update
+    default: ---> Package grub2-tools-minimal.x86_64 1:2.02-0.81.el7.centos will be updated
+    default: ---> Package grub2-tools-minimal.x86_64 1:2.02-0.86.el7.centos will be an update
+    default: ---> Package gssproxy.x86_64 0:0.7.0-28.el7 will be updated
+    default: ---> Package gssproxy.x86_64 0:0.7.0-29.el7 will be an update
+    default: ---> Package hwdata.x86_64 0:0.252-9.5.el7 will be updated
+    default: ---> Package hwdata.x86_64 0:0.252-9.7.el7 will be an update
+    default: ---> Package initscripts.x86_64 0:9.49.49-1.el7 will be updated
+    default: ---> Package initscripts.x86_64 0:9.49.53-1.el7_9.1 will be an update
+    default: --> Processing Dependency: bc for package: initscripts-9.49.53-1.el7_9.1.x86_64
+    default: ---> Package iproute.x86_64 0:4.11.0-25.el7_7.2 will be updated
+    default: ---> Package iproute.x86_64 0:4.11.0-30.el7 will be an update
+    default: ---> Package iptables.x86_64 0:1.4.21-34.el7 will be updated
+    default: ---> Package iptables.x86_64 0:1.4.21-35.el7 will be an update
+    default: ---> Package kernel.x86_64 0:3.10.0-1160.11.1.el7 will be installed
+    default: ---> Package kernel-tools.x86_64 0:3.10.0-1127.el7 will be updated
+    default: ---> Package kernel-tools.x86_64 0:3.10.0-1160.11.1.el7 will be an update
+    default: ---> Package kernel-tools-libs.x86_64 0:3.10.0-1127.el7 will be updated
+    default: ---> Package kernel-tools-libs.x86_64 0:3.10.0-1160.11.1.el7 will be an update
+    default: ---> Package kpartx.x86_64 0:0.4.9-131.el7 will be updated
+    default: ---> Package kpartx.x86_64 0:0.4.9-134.el7_9 will be an update
+    default: ---> Package krb5-libs.x86_64 0:1.15.1-46.el7 will be updated
+    default: ---> Package krb5-libs.x86_64 0:1.15.1-50.el7 will be an update
+    default: ---> Package libblkid.x86_64 0:2.23.2-63.el7 will be updated
+    default: ---> Package libblkid.x86_64 0:2.23.2-65.el7 will be an update
+    default: ---> Package libcom_err.x86_64 0:1.42.9-17.el7 will be updated
+    default: ---> Package libcom_err.x86_64 0:1.42.9-19.el7 will be an update
+    default: ---> Package libcroco.x86_64 0:0.6.12-4.el7 will be updated
+    default: ---> Package libcroco.x86_64 0:0.6.12-6.el7_9 will be an update
+    default: ---> Package libcurl.x86_64 0:7.29.0-57.el7 will be updated
+    default: ---> Package libcurl.x86_64 0:7.29.0-59.el7_9.1 will be an update
+    default: ---> Package libgcc.x86_64 0:4.8.5-39.el7 will be updated
+    default: ---> Package libgcc.x86_64 0:4.8.5-44.el7 will be an update
+    default: ---> Package libgomp.x86_64 0:4.8.5-39.el7 will be updated
+    default: ---> Package libgomp.x86_64 0:4.8.5-44.el7 will be an update
+    default: ---> Package libmount.x86_64 0:2.23.2-63.el7 will be updated
+    default: ---> Package libmount.x86_64 0:2.23.2-65.el7 will be an update
+    default: ---> Package libmspack.x86_64 0:0.5-0.7.alpha.el7 will be updated
+    default: ---> Package libmspack.x86_64 0:0.5-0.8.alpha.el7 will be an update
+    default: ---> Package libpng.x86_64 2:1.5.13-7.el7_2 will be updated
+    default: ---> Package libpng.x86_64 2:1.5.13-8.el7 will be an update
+    default: ---> Package libsmartcols.x86_64 0:2.23.2-63.el7 will be updated
+    default: ---> Package libsmartcols.x86_64 0:2.23.2-65.el7 will be an update
+    default: ---> Package libss.x86_64 0:1.42.9-17.el7 will be updated
+    default: ---> Package libss.x86_64 0:1.42.9-19.el7 will be an update
+    default: ---> Package libssh2.x86_64 0:1.8.0-3.el7 will be updated
+    default: ---> Package libssh2.x86_64 0:1.8.0-4.el7 will be an update
+    default: ---> Package libstdc++.x86_64 0:4.8.5-39.el7 will be updated
+    default: ---> Package libstdc++.x86_64 0:4.8.5-44.el7 will be an update
+    default: ---> Package libteam.x86_64 0:1.29-1.el7 will be updated
+    default: ---> Package libteam.x86_64 0:1.29-3.el7 will be an update
+    default: ---> Package libuuid.x86_64 0:2.23.2-63.el7 will be updated
+    default: ---> Package libuuid.x86_64 0:2.23.2-65.el7 will be an update
+    default: ---> Package libwbclient.x86_64 0:4.10.4-10.el7 will be updated
+    default: ---> Package libwbclient.x86_64 0:4.10.16-9.el7_9 will be an update
+    default: ---> Package libxml2.x86_64 0:2.9.1-6.el7.4 will be updated
+    default: ---> Package libxml2.x86_64 0:2.9.1-6.el7.5 will be an update
+    default: ---> Package libxml2-python.x86_64 0:2.9.1-6.el7.4 will be updated
+    default: ---> Package libxml2-python.x86_64 0:2.9.1-6.el7.5 will be an update
+    default: ---> Package libxslt.x86_64 0:1.1.28-5.el7 will be updated
+    default: ---> Package libxslt.x86_64 0:1.1.28-6.el7 will be an update
+    default: ---> Package linux-firmware.noarch 0:20191203-76.gite8a0f4c.el7 will be updated
+    default: ---> Package linux-firmware.noarch 0:20200421-79.git78c0348.el7 will be an update
+    default: ---> Package lshw.x86_64 0:B.02.18-14.el7 will be updated
+    default: ---> Package lshw.x86_64 0:B.02.18-17.el7 will be an update
+    default: ---> Package lz4.x86_64 0:1.7.5-3.el7 will be updated
+    default: ---> Package lz4.x86_64 0:1.8.3-1.el7 will be an update
+    default: ---> Package mariadb-libs.x86_64 1:5.5.65-1.el7 will be updated
+    default: ---> Package mariadb-libs.x86_64 1:5.5.68-1.el7 will be an update
+    default: ---> Package nfs-utils.x86_64 1:1.3.0-0.66.el7 will be updated
+    default: ---> Package nfs-utils.x86_64 1:1.3.0-0.68.el7 will be an update
+    default: ---> Package nspr.x86_64 0:4.21.0-1.el7 will be updated
+    default: ---> Package nspr.x86_64 0:4.25.0-2.el7_9 will be an update
+    default: ---> Package nss.x86_64 0:3.44.0-7.el7_7 will be updated
+    default: ---> Package nss.x86_64 0:3.53.1-3.el7_9 will be an update
+    default: ---> Package nss-softokn.x86_64 0:3.44.0-8.el7_7 will be updated
+    default: ---> Package nss-softokn.x86_64 0:3.53.1-6.el7_9 will be an update
+    default: ---> Package nss-softokn-freebl.x86_64 0:3.44.0-8.el7_7 will be updated
+    default: ---> Package nss-softokn-freebl.x86_64 0:3.53.1-6.el7_9 will be an update
+    default: ---> Package nss-sysinit.x86_64 0:3.44.0-7.el7_7 will be updated
+    default: ---> Package nss-sysinit.x86_64 0:3.53.1-3.el7_9 will be an update
+    default: ---> Package nss-tools.x86_64 0:3.44.0-7.el7_7 will be updated
+    default: ---> Package nss-tools.x86_64 0:3.53.1-3.el7_9 will be an update
+    default: ---> Package nss-util.x86_64 0:3.44.0-4.el7_7 will be updated
+    default: ---> Package nss-util.x86_64 0:3.53.1-1.el7_9 will be an update
+    default: ---> Package open-vm-tools.x86_64 0:10.3.10-2.el7 will be updated
+    default: ---> Package open-vm-tools.x86_64 0:11.0.5-3.el7_9.1 will be an update
+    default: ---> Package openldap.x86_64 0:2.4.44-21.el7_6 will be updated
+    default: ---> Package openldap.x86_64 0:2.4.44-22.el7 will be an update
+    default: ---> Package openssl.x86_64 1:1.0.2k-19.el7 will be updated
+    default: ---> Package openssl.x86_64 1:1.0.2k-21.el7_9 will be an update
+    default: ---> Package openssl-libs.x86_64 1:1.0.2k-19.el7 will be updated
+    default: ---> Package openssl-libs.x86_64 1:1.0.2k-21.el7_9 will be an update
+    default: ---> Package procps-ng.x86_64 0:3.3.10-27.el7 will be updated
+    default: ---> Package procps-ng.x86_64 0:3.3.10-28.el7 will be an update
+    default: ---> Package python.x86_64 0:2.7.5-88.el7 will be updated
+    default: ---> Package python.x86_64 0:2.7.5-90.el7 will be an update
+    default: ---> Package python-firewall.noarch 0:0.6.3-8.el7_8.1 will be updated
+    default: ---> Package python-firewall.noarch 0:0.6.3-12.el7 will be an update
+    default: ---> Package python-libs.x86_64 0:2.7.5-88.el7 will be updated
+    default: ---> Package python-libs.x86_64 0:2.7.5-90.el7 will be an update
+    default: ---> Package python-perf.x86_64 0:3.10.0-1127.el7 will be updated
+    default: ---> Package python-perf.x86_64 0:3.10.0-1160.11.1.el7 will be an update
+    default: ---> Package rpm.x86_64 0:4.11.3-43.el7 will be updated
+    default: ---> Package rpm.x86_64 0:4.11.3-45.el7 will be an update
+    default: ---> Package rpm-build-libs.x86_64 0:4.11.3-43.el7 will be updated
+    default: ---> Package rpm-build-libs.x86_64 0:4.11.3-45.el7 will be an update
+    default: ---> Package rpm-libs.x86_64 0:4.11.3-43.el7 will be updated
+    default: ---> Package rpm-libs.x86_64 0:4.11.3-45.el7 will be an update
+    default: ---> Package rpm-python.x86_64 0:4.11.3-43.el7 will be updated
+    default: ---> Package rpm-python.x86_64 0:4.11.3-45.el7 will be an update
+    default: ---> Package rsyslog.x86_64 0:8.24.0-52.el7 will be updated
+    default: ---> Package rsyslog.x86_64 0:8.24.0-57.el7_9 will be an update
+    default: ---> Package samba-client-libs.x86_64 0:4.10.4-10.el7 will be updated
+    default: ---> Package samba-client-libs.x86_64 0:4.10.16-9.el7_9 will be an update
+    default: ---> Package samba-common.noarch 0:4.10.4-10.el7 will be updated
+    default: ---> Package samba-common.noarch 0:4.10.16-9.el7_9 will be an update
+    default: ---> Package samba-common-libs.x86_64 0:4.10.4-10.el7 will be updated
+    default: ---> Package samba-common-libs.x86_64 0:4.10.16-9.el7_9 will be an update
+    default: ---> Package samba-libs.x86_64 0:4.10.4-10.el7 will be updated
+    default: ---> Package samba-libs.x86_64 0:4.10.16-9.el7_9 will be an update
+    default: ---> Package sed.x86_64 0:4.2.2-6.el7 will be updated
+    default: ---> Package sed.x86_64 0:4.2.2-7.el7 will be an update
+    default: ---> Package selinux-policy.noarch 0:3.13.1-266.el7 will be updated
+    default: ---> Package selinux-policy.noarch 0:3.13.1-268.el7_9.2 will be an update
+    default: ---> Package selinux-policy-targeted.noarch 0:3.13.1-266.el7 will be updated
+    default: ---> Package selinux-policy-targeted.noarch 0:3.13.1-268.el7_9.2 will be an update
+    default: ---> Package sudo.x86_64 0:1.8.23-9.el7 will be updated
+    default: ---> Package sudo.x86_64 0:1.8.23-10.el7 will be an update
+    default: ---> Package systemd.x86_64 0:219-73.el7_8.5 will be updated
+    default: ---> Package systemd.x86_64 0:219-78.el7_9.2 will be an update
+    default: ---> Package systemd-libs.x86_64 0:219-73.el7_8.5 will be updated
+    default: ---> Package systemd-libs.x86_64 0:219-78.el7_9.2 will be an update
+    default: ---> Package systemd-sysv.x86_64 0:219-73.el7_8.5 will be updated
+    default: ---> Package systemd-sysv.x86_64 0:219-78.el7_9.2 will be an update
+    default: ---> Package teamd.x86_64 0:1.29-1.el7 will be updated
+    default: ---> Package teamd.x86_64 0:1.29-3.el7 will be an update
+    default: ---> Package tuned.noarch 0:2.11.0-8.el7 will be updated
+    default: ---> Package tuned.noarch 0:2.11.0-10.el7 will be an update
+    default: ---> Package tzdata.noarch 0:2020a-1.el7 will be updated
+    default: ---> Package tzdata.noarch 0:2020d-2.el7 will be an update
+    default: ---> Package util-linux.x86_64 0:2.23.2-63.el7 will be updated
+    default: ---> Package util-linux.x86_64 0:2.23.2-65.el7 will be an update
+    default: ---> Package vim-minimal.x86_64 2:7.4.629-6.el7 will be updated
+    default: ---> Package vim-minimal.x86_64 2:7.4.629-8.el7_9 will be an update
+    default: ---> Package xfsprogs.x86_64 0:4.5.0-20.el7 will be updated
+    default: ---> Package xfsprogs.x86_64 0:4.5.0-22.el7 will be an update
+    default: ---> Package yum.noarch 0:3.4.3-167.el7.centos will be updated
+    default: ---> Package yum.noarch 0:3.4.3-168.el7.centos will be an update
+    default: ---> Package yum-plugin-fastestmirror.noarch 0:1.1.31-53.el7 will be updated
+    default: ---> Package yum-plugin-fastestmirror.noarch 0:1.1.31-54.el7_8 will be an update
+    default: ---> Package yum-utils.noarch 0:1.1.31-53.el7 will be updated
+    default: ---> Package yum-utils.noarch 0:1.1.31-54.el7_8 will be an update
+    default: --> Running transaction check
+    default: ---> Package bc.x86_64 0:1.06.95-13.el7 will be installed
+    default: --> Finished Dependency Resolution
+    default:
+    default: Dependencies Resolved
+    default:
+    default: ================================================================================
+    default:  Package                     Arch   Version                       Repository
+    default:                                                                            Size
+    default: ================================================================================
+    default: Installing:
+    default:  kernel                      x86_64 3.10.0-1160.11.1.el7          updates  50 M
+    default: Updating:
+    default:  NetworkManager              x86_64 1:1.18.8-2.el7_9              updates 1.9 M
+    default:  NetworkManager-libnm        x86_64 1:1.18.8-2.el7_9              updates 1.7 M
+    default:  NetworkManager-team         x86_64 1:1.18.8-2.el7_9              updates 165 k
+    default:  NetworkManager-tui          x86_64 1:1.18.8-2.el7_9              updates 329 k
+    default:  bind-export-libs            x86_64 32:9.11.4-26.P2.el7_9.3       updates 1.1 M
+    default:  binutils                    x86_64 2.27-44.base.el7              base    5.9 M
+    default:  ca-certificates             noarch 2020.2.41-70.0.el7_8          base    382 k
+    default:  centos-release              x86_64 7-9.2009.1.el7.centos         updates  27 k
+    default:  chkconfig                   x86_64 1.7.6-1.el7                   base    182 k
+    default:  coreutils                   x86_64 8.22-24.el7_9.2               updates 3.3 M
+    default:  cpio                        x86_64 2.11-28.el7                   base    211 k
+    default:  cups-libs                   x86_64 1:1.6.3-51.el7                base    359 k
+    default:  curl                        x86_64 7.29.0-59.el7_9.1             updates 271 k
+    default:  dbus                        x86_64 1:1.10.24-15.el7              base    245 k
+    default:  dbus-libs                   x86_64 1:1.10.24-15.el7              base    169 k
+    default:  device-mapper               x86_64 7:1.02.170-6.el7_9.3          updates 297 k
+    default:  device-mapper-libs          x86_64 7:1.02.170-6.el7_9.3          updates 325 k
+    default:  dhclient                    x86_64 12:4.2.5-82.el7.centos        base    286 k
+    default:  dhcp-common                 x86_64 12:4.2.5-82.el7.centos        base    176 k
+    default:  dhcp-libs                   x86_64 12:4.2.5-82.el7.centos        base    133 k
+    default:  dmidecode                   x86_64 1:3.2-5.el7                   base     82 k
+    default:  dracut                      x86_64 033-572.el7                   base    329 k
+    default:  e2fsprogs                   x86_64 1.42.9-19.el7                 base    701 k
+    default:  e2fsprogs-libs              x86_64 1.42.9-19.el7                 base    168 k
+    default:  elfutils-default-yama-scope noarch 0.176-5.el7                   base     33 k
+    default:  elfutils-libelf             x86_64 0.176-5.el7                   base    195 k
+    default:  elfutils-libs               x86_64 0.176-5.el7                   base    291 k
+    default:  expat                       x86_64 2.1.0-12.el7                  base     81 k
+    default:  file                        x86_64 5.11-37.el7                   base     57 k
+    default:  file-libs                   x86_64 5.11-37.el7                   base    340 k
+    default:  firewalld                   noarch 0.6.3-12.el7                  updates 448 k
+    default:  firewalld-filesystem        noarch 0.6.3-12.el7                  updates  51 k
+    default:  freetype                    x86_64 2.8-14.el7_9.1                updates 380 k
+    default:  glib2                       x86_64 2.56.1-8.el7                  updates 2.5 M
+    default:  glibc                       x86_64 2.17-317.el7                  base    3.6 M
+    default:  glibc-common                x86_64 2.17-317.el7                  base     11 M
+    default:  grub2                       x86_64 1:2.02-0.86.el7.centos        base     32 k
+    default:  grub2-common                noarch 1:2.02-0.86.el7.centos        base    729 k
+    default:  grub2-pc                    x86_64 1:2.02-0.86.el7.centos        base     32 k
+    default:  grub2-pc-modules            noarch 1:2.02-0.86.el7.centos        base    850 k
+    default:  grub2-tools                 x86_64 1:2.02-0.86.el7.centos        base    1.8 M
+    default:  grub2-tools-extra           x86_64 1:2.02-0.86.el7.centos        base    1.0 M
+    default:  grub2-tools-minimal         x86_64 1:2.02-0.86.el7.centos        base    174 k
+    default:  gssproxy                    x86_64 0.7.0-29.el7                  base    111 k
+    default:  hwdata                      x86_64 0.252-9.7.el7                 base    2.5 M
+    default:  initscripts                 x86_64 9.49.53-1.el7_9.1             updates 440 k
+    default:  iproute                     x86_64 4.11.0-30.el7                 base    805 k
+    default:  iptables                    x86_64 1.4.21-35.el7                 base    432 k
+    default:  kernel-tools                x86_64 3.10.0-1160.11.1.el7          updates 8.1 M
+    default:  kernel-tools-libs           x86_64 3.10.0-1160.11.1.el7          updates 8.0 M
+    default:  kpartx                      x86_64 0.4.9-134.el7_9               updates  81 k
+    default:  krb5-libs                   x86_64 1.15.1-50.el7                 base    809 k
+    default:  libblkid                    x86_64 2.23.2-65.el7                 base    183 k
+    default:  libcom_err                  x86_64 1.42.9-19.el7                 base     42 k
+    default:  libcroco                    x86_64 0.6.12-6.el7_9                updates 105 k
+    default:  libcurl                     x86_64 7.29.0-59.el7_9.1             updates 223 k
+    default:  libgcc                      x86_64 4.8.5-44.el7                  base    103 k
+    default:  libgomp                     x86_64 4.8.5-44.el7                  base    159 k
+    default:  libmount                    x86_64 2.23.2-65.el7                 base    184 k
+    default:  libmspack                   x86_64 0.5-0.8.alpha.el7             base     64 k
+    default:  libpng                      x86_64 2:1.5.13-8.el7                base    213 k
+    default:  libsmartcols                x86_64 2.23.2-65.el7                 base    142 k
+    default:  libss                       x86_64 1.42.9-19.el7                 base     47 k
+    default:  libssh2                     x86_64 1.8.0-4.el7                   base     88 k
+    default:  libstdc++                   x86_64 4.8.5-44.el7                  base    306 k
+    default:  libteam                     x86_64 1.29-3.el7                    base     50 k
+    default:  libuuid                     x86_64 2.23.2-65.el7                 base     84 k
+    default:  libwbclient                 x86_64 4.10.16-9.el7_9               updates 115 k
+    default:  libxml2                     x86_64 2.9.1-6.el7.5                 base    668 k
+    default:  libxml2-python              x86_64 2.9.1-6.el7.5                 base    247 k
+    default:  libxslt                     x86_64 1.1.28-6.el7                  base    242 k
+    default:  linux-firmware              noarch 20200421-79.git78c0348.el7    base     80 M
+    default:  lshw                        x86_64 B.02.18-17.el7                base    324 k
+    default:  lz4                         x86_64 1.8.3-1.el7                   base     85 k
+    default:  mariadb-libs                x86_64 1:5.5.68-1.el7                base    760 k
+    default:  nfs-utils                   x86_64 1:1.3.0-0.68.el7              base    412 k
+    default:  nspr                        x86_64 4.25.0-2.el7_9                updates 127 k
+    default:  nss                         x86_64 3.53.1-3.el7_9                updates 869 k
+    default:  nss-softokn                 x86_64 3.53.1-6.el7_9                updates 354 k
+    default:  nss-softokn-freebl          x86_64 3.53.1-6.el7_9                updates 322 k
+    default:  nss-sysinit                 x86_64 3.53.1-3.el7_9                updates  65 k
+    default:  nss-tools                   x86_64 3.53.1-3.el7_9                updates 535 k
+    default:  nss-util                    x86_64 3.53.1-1.el7_9                updates  79 k
+    default:  open-vm-tools               x86_64 11.0.5-3.el7_9.1              updates 676 k
+    default:  openldap                    x86_64 2.4.44-22.el7                 base    356 k
+    default:  openssl                     x86_64 1:1.0.2k-21.el7_9             updates 493 k
+    default:  openssl-libs                x86_64 1:1.0.2k-21.el7_9             updates 1.2 M
+    default:  procps-ng                   x86_64 3.3.10-28.el7                 base    291 k
+    default:  python                      x86_64 2.7.5-90.el7                  updates  96 k
+    default:  python-firewall             noarch 0.6.3-12.el7                  updates 355 k
+    default:  python-libs                 x86_64 2.7.5-90.el7                  updates 5.6 M
+    default:  python-perf                 x86_64 3.10.0-1160.11.1.el7          updates 8.1 M
+    default:  rpm                         x86_64 4.11.3-45.el7                 base    1.2 M
+    default:  rpm-build-libs              x86_64 4.11.3-45.el7                 base    107 k
+    default:  rpm-libs                    x86_64 4.11.3-45.el7                 base    278 k
+    default:  rpm-python                  x86_64 4.11.3-45.el7                 base     84 k
+    default:  rsyslog                     x86_64 8.24.0-57.el7_9               updates 621 k
+    default:  samba-client-libs           x86_64 4.10.16-9.el7_9               updates 5.0 M
+    default:  samba-common                noarch 4.10.16-9.el7_9               updates 215 k
+    default:  samba-common-libs           x86_64 4.10.16-9.el7_9               updates 181 k
+    default:  samba-libs                  x86_64 4.10.16-9.el7_9               updates 270 k
+    default:  sed                         x86_64 4.2.2-7.el7                   base    231 k
+    default:  selinux-policy              noarch 3.13.1-268.el7_9.2            updates 498 k
+    default:  selinux-policy-targeted     noarch 3.13.1-268.el7_9.2            updates 7.0 M
+    default:  sudo                        x86_64 1.8.23-10.el7                 base    842 k
+    default:  systemd                     x86_64 219-78.el7_9.2                updates 5.1 M
+    default:  systemd-libs                x86_64 219-78.el7_9.2                updates 418 k
+    default:  systemd-sysv                x86_64 219-78.el7_9.2                updates  96 k
+    default:  teamd                       x86_64 1.29-3.el7                    base    116 k
+    default:  tuned                       noarch 2.11.0-10.el7                 updates 269 k
+    default:  tzdata                      noarch 2020d-2.el7                   updates 499 k
+    default:  util-linux                  x86_64 2.23.2-65.el7                 base    2.0 M
+    default:  vim-minimal                 x86_64 2:7.4.629-8.el7_9             updates 443 k
+    default:  xfsprogs                    x86_64 4.5.0-22.el7                  base    897 k
+    default:  yum                         noarch 3.4.3-168.el7.centos          base    1.2 M
+    default:  yum-plugin-fastestmirror    noarch 1.1.31-54.el7_8               base     34 k
+    default:  yum-utils                   noarch 1.1.31-54.el7_8               base    122 k
+    default: Installing for dependencies:
+    default:  bc                          x86_64 1.06.95-13.el7                base    115 k
+    default:
+    default: Transaction Summary
+    default: ================================================================================
+    default: Install    1 Package  (+1 Dependent package)
+    default: Upgrade  117 Packages
+    default:
+    default: Total download size: 246 M
+    default: Downloading packages:
+    default: No Presto metadata available for base
+    default: No Presto metadata available for updates
+    default: Public key for NetworkManager-libnm-1.18.8-2.el7_9.x86_64.rpm is not installed
+    default: warning: /var/cache/yum/x86_64/7/updates/packages/NetworkManager-libnm-1.18.8-2.el7_9.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+    default: Public key for bc-1.06.95-13.el7.x86_64.rpm is not installed
+    default: --------------------------------------------------------------------------------
+    default: Total                                               13 MB/s | 246 MB  00:19
+    default: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    default: Importing GPG key 0xF4A80EB5:
+    default:  Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+    default:  Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+    default:  Package    : centos-release-7-8.2003.0.el7.centos.x86_64 (@anaconda)
+    default:  From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    default: Running transaction check
+    default: Running transaction test
+    default: Transaction test succeeded
+    default: Running transaction
+    default:   Updating   : libgcc-4.8.5-44.el7.x86_64                                 1/236
+    default:
+    default:   Updating   : 1:grub2-common-2.02-0.86.el7.centos.noarch                 2/236
+    default:
+    default:   Updating   : centos-release-7-9.2009.1.el7.centos.x86_64                3/236
+    default:
+    default:   Updating   : 1:grub2-pc-modules-2.02-0.86.el7.centos.noarch             4/236
+    default:
+    default:   Updating   : firewalld-filesystem-0.6.3-12.el7.noarch                   5/236
+    default:
+    default:   Updating   : tzdata-2020d-2.el7.noarch                                  6/236
+    default:
+    default:   Updating   : nss-softokn-freebl-3.53.1-6.el7_9.x86_64                   7/236
+    default:
+    default:   Updating   : glibc-common-2.17-317.el7.x86_64                           8/236
+    default:
+    default:   Updating   : glibc-2.17-317.el7.x86_64                                  9/236
+    default:
+    default:   Updating   : nspr-4.25.0-2.el7_9.x86_64                                10/236
+    default:
+    default:   Updating   : nss-util-3.53.1-1.el7_9.x86_64                            11/236
+    default:
+    default:   Updating   : libcom_err-1.42.9-19.el7.x86_64                           12/236
+    default:
+    default:   Updating   : libuuid-2.23.2-65.el7.x86_64                              13/236
+    default:
+    default:   Updating   : sed-4.2.2-7.el7.x86_64                                    14/236
+    default:
+    default:   Updating   : elfutils-libelf-0.176-5.el7.x86_64                        15/236
+    default:
+    default:   Updating   : chkconfig-1.7.6-1.el7.x86_64                              16/236
+    default:
+    default:   Updating   : libxml2-2.9.1-6.el7.5.x86_64                              17/236
+    default:
+    default:   Updating   : file-libs-5.11-37.el7.x86_64                              18/236
+    default:
+    default:   Updating   : file-5.11-37.el7.x86_64                                   19/236
+    default:
+    default:   Updating   : libstdc++-4.8.5-44.el7.x86_64                             20/236
+    default:
+    default:   Updating   : cpio-2.11-28.el7.x86_64                                   21/236
+    default:
+    default:   Updating   : nss-softokn-3.53.1-6.el7_9.x86_64                         22/236
+    default:
+    default:   Updating   : lz4-1.8.3-1.el7.x86_64                                    23/236
+    default:
+    default:   Updating   : expat-2.1.0-12.el7.x86_64                                 24/236
+    default:
+    default:   Updating   : iptables-1.4.21-35.el7.x86_64                             25/236
+    default:
+    default:   Updating   : iproute-4.11.0-30.el7.x86_64                              26/236
+    default:
+    default:   Updating   : libxslt-1.1.28-6.el7.x86_64                               27/236
+    default:
+    default:   Updating   : e2fsprogs-libs-1.42.9-19.el7.x86_64                       28/236
+    default:
+    default:   Updating   : libss-1.42.9-19.el7.x86_64                                29/236
+    default:
+    default:   Updating   : kernel-tools-libs-3.10.0-1160.11.1.el7.x86_64             30/236
+    default:
+    default:   Updating   : 2:vim-minimal-7.4.629-8.el7_9.x86_64                      31/236
+    default:
+    default:   Installing : bc-1.06.95-13.el7.x86_64                                  32/236
+    default:
+    default:   Updating   : libmspack-0.5-0.8.alpha.el7.x86_64                        33/236
+    default:
+    default:   Updating   : 2:libpng-1.5.13-8.el7.x86_64                              34/236
+    default:
+    default:   Updating   : freetype-2.8-14.el7_9.1.x86_64                            35/236
+    default:
+    default:   Updating   : libteam-1.29-3.el7.x86_64                                 36/236
+    default:
+    default:   Updating   : libsmartcols-2.23.2-65.el7.x86_64                         37/236
+    default:
+    default:   Updating   : linux-firmware-20200421-79.git78c0348.el7.noarch          38/236
+    default:
+    default:   Updating   : ca-certificates-2020.2.41-70.0.el7_8.noarch               39/236
+    default:
+    default:   Updating   : coreutils-8.22-24.el7_9.2.x86_64                          40/236
+    default:
+    default:   Updating   : 1:openssl-libs-1.0.2k-21.el7_9.x86_64                     41/236
+    default:
+    default:   Updating   : krb5-libs-1.15.1-50.el7.x86_64                            42/236
+    default:
+    default:   Updating   : libblkid-2.23.2-65.el7.x86_64                             43/236
+    default:
+    default:   Updating   : python-libs-2.7.5-90.el7.x86_64                           44/236
+    default:
+    default:   Updating   : python-2.7.5-90.el7.x86_64                                45/236
+    default:
+    default:   Updating   : libmount-2.23.2-65.el7.x86_64                             46/236
+    default:
+    default:   Updating   : glib2-2.56.1-8.el7.x86_64                                 47/236
+    default:
+    default:   Updating   : 1:cups-libs-1.6.3-51.el7.x86_64                           48/236
+    default:
+    default:   Updating   : libxml2-python-2.9.1-6.el7.5.x86_64                       49/236
+    default:
+    default:   Updating   : python-firewall-0.6.3-12.el7.noarch                       50/236
+    default:
+    default:   Updating   : python-perf-3.10.0-1160.11.1.el7.x86_64                   51/236
+    default:
+    default:   Updating   : 32:bind-export-libs-9.11.4-26.P2.el7_9.3.x86_64           52/236
+    default:
+    default:   Updating   : libssh2-1.8.0-4.el7.x86_64                                53/236
+    default:
+    default:   Updating   : selinux-policy-3.13.1-268.el7_9.2.noarch                  54/236
+    default:
+    default:   Updating   : nss-3.53.1-3.el7_9.x86_64                                 55/236
+    default:
+    default:   Updating   : nss-sysinit-3.53.1-3.el7_9.x86_64                         56/236
+    default:
+    default:   Updating   : nss-tools-3.53.1-3.el7_9.x86_64                           57/236
+    default:
+    default:   Updating   : libcurl-7.29.0-59.el7_9.1.x86_64                          58/236
+    default:
+    default:   Updating   : curl-7.29.0-59.el7_9.1.x86_64                             59/236
+    default:
+    default:   Updating   : rpm-libs-4.11.3-45.el7.x86_64                             60/236
+    default:
+    default:   Updating   : rpm-4.11.3-45.el7.x86_64                                  61/236
+    default:
+    default:   Updating   : openldap-2.4.44-22.el7.x86_64                             62/236
+    default:
+    default:   Updating   : elfutils-libs-0.176-5.el7.x86_64                          63/236
+    default:
+    default:   Updating   : systemd-libs-219-78.el7_9.2.x86_64                        64/236
+    default:
+    default:   Updating   : 1:dbus-libs-1.10.24-15.el7.x86_64                         65/236
+    default:
+    default:   Updating   : systemd-219-78.el7_9.2.x86_64                             66/236
+    default:
+    default:   Updating   : 1:dbus-1.10.24-15.el7.x86_64                              67/236
+    default:
+    default:   Updating   : elfutils-default-yama-scope-0.176-5.el7.noarch            68/236
+    default:
+    default:   Updating   : util-linux-2.23.2-65.el7.x86_64                           69/236
+    default:
+    default:   Updating   : samba-common-4.10.16-9.el7_9.noarch                       70/236
+    default:
+    default:   Updating   : libwbclient-4.10.16-9.el7_9.x86_64                        71/236
+    default:
+    default:   Updating   : samba-client-libs-4.10.16-9.el7_9.x86_64                  72/236
+    default:
+    default:   Updating   : samba-common-libs-4.10.16-9.el7_9.x86_64                  73/236
+    default:
+    default:   Updating   : 1:NetworkManager-libnm-1.18.8-2.el7_9.x86_64              74/236
+    default:
+    default:   Updating   : 1:NetworkManager-1.18.8-2.el7_9.x86_64                    75/236
+    default:
+    default:   Updating   : 12:dhcp-libs-4.2.5-82.el7.centos.x86_64                   76/236
+    default:
+    default:   Updating   : procps-ng-3.3.10-28.el7.x86_64                            77/236
+    default:
+    default:   Updating   : initscripts-9.49.53-1.el7_9.1.x86_64                      78/236
+    default:
+    default:   Updating   : 12:dhcp-common-4.2.5-82.el7.centos.x86_64                 79/236
+    default:
+    default:   Updating   : 7:device-mapper-libs-1.02.170-6.el7_9.3.x86_64            80/236
+    default:
+    default:   Updating   : 7:device-mapper-1.02.170-6.el7_9.3.x86_64                 81/236
+    default:
+    default:   Updating   : 1:grub2-tools-minimal-2.02-0.86.el7.centos.x86_64         82/236
+    default:
+    default:   Updating   : kpartx-0.4.9-134.el7_9.x86_64                             83/236
+    default:
+    default:   Updating   : dracut-033-572.el7.x86_64                                 84/236
+    default:
+    default:   Updating   : 1:grub2-tools-2.02-0.86.el7.centos.x86_64                 85/236
+    default:
+    default:   Updating   : 1:grub2-tools-extra-2.02-0.86.el7.centos.x86_64           86/236
+    default:
+    default:   Updating   : 1:grub2-pc-2.02-0.86.el7.centos.x86_64                    87/236
+    default:
+    default:   Updating   : hwdata-0.252-9.7.el7.x86_64                               88/236
+    default:
+    default:   Updating   : gssproxy-0.7.0-29.el7.x86_64                              89/236
+    default:
+    default:   Updating   : teamd-1.29-3.el7.x86_64                                   90/236
+    default:
+    default:   Updating   : rpm-build-libs-4.11.3-45.el7.x86_64                       91/236
+    default:
+    default:   Updating   : rpm-python-4.11.3-45.el7.x86_64                           92/236
+    default:
+    default:   Updating   : yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch           93/236
+    default:
+    default:   Updating   : yum-3.4.3-168.el7.centos.noarch                           94/236
+    default:
+    default:   Updating   : yum-utils-1.1.31-54.el7_8.noarch                          95/236
+    default:
+    default:   Updating   : 1:NetworkManager-team-1.18.8-2.el7_9.x86_64               96/236
+    default:
+    default:   Updating   : 1:nfs-utils-1.3.0-0.68.el7.x86_64                         97/236
+    default:
+    default:   Updating   : lshw-B.02.18-17.el7.x86_64                                98/236
+    default:
+    default:   Updating   : 1:grub2-2.02-0.86.el7.centos.x86_64                       99/236
+    default:
+    default:   Installing : kernel-3.10.0-1160.11.1.el7.x86_64                       100/236
+    default:
+    default:   Updating   : 12:dhclient-4.2.5-82.el7.centos.x86_64                   101/236
+    default:
+    default:   Updating   : 1:NetworkManager-tui-1.18.8-2.el7_9.x86_64               102/236
+    default:
+    default:   Updating   : samba-libs-4.10.16-9.el7_9.x86_64                        103/236
+    default:
+    default:   Updating   : tuned-2.11.0-10.el7.noarch                               104/236
+    default:
+    default:   Updating   : open-vm-tools-11.0.5-3.el7_9.1.x86_64                    105/236
+    default:
+    default:   Updating   : systemd-sysv-219-78.el7_9.2.x86_64                       106/236
+    default:
+    default:   Updating   : firewalld-0.6.3-12.el7.noarch                            107/236
+    default:
+    default:   Updating   : rsyslog-8.24.0-57.el7_9.x86_64                           108/236
+    default:
+    default:   Updating   : sudo-1.8.23-10.el7.x86_64                                109/236
+    default:
+    default:   Updating   : selinux-policy-targeted-3.13.1-268.el7_9.2.noarch        110/236
+    default:
+    default:   Updating   : libcroco-0.6.12-6.el7_9.x86_64                           111/236
+    default:
+    default:   Updating   : e2fsprogs-1.42.9-19.el7.x86_64                           112/236
+    default:
+    default:   Updating   : xfsprogs-4.5.0-22.el7.x86_64                             113/236
+    default:
+    default:   Updating   : 1:openssl-1.0.2k-21.el7_9.x86_64                         114/236
+    default:
+    default:   Updating   : 1:mariadb-libs-5.5.68-1.el7.x86_64                       115/236
+    default:
+    default:   Updating   : binutils-2.27-44.base.el7.x86_64                         116/236
+    default:
+    default:   Updating   : kernel-tools-3.10.0-1160.11.1.el7.x86_64                 117/236
+    default:
+    default:   Updating   : 1:dmidecode-3.2-5.el7.x86_64                             118/236
+    default:
+    default:   Updating   : libgomp-4.8.5-44.el7.x86_64                              119/236
+    default:
+    default:   Cleanup    : 12:dhclient-4.2.5-79.el7.centos.x86_64                   120/236
+    default:
+    default:   Cleanup    : tuned-2.11.0-8.el7.noarch                                121/236
+    default:
+    default:   Cleanup    : firewalld-0.6.3-8.el7_8.1.noarch                         122/236
+    default:
+    default:   Cleanup    : yum-utils-1.1.31-53.el7.noarch                           123/236
+    default:
+    default:   Cleanup    : yum-3.4.3-167.el7.centos.noarch                          124/236
+    default:
+    default:   Cleanup    : yum-plugin-fastestmirror-1.1.31-53.el7.noarch            125/236
+    default:
+    default:   Cleanup    : systemd-sysv-219-73.el7_8.5.x86_64                       126/236
+    default:
+    default:   Cleanup    : selinux-policy-targeted-3.13.1-266.el7.noarch            127/236
+    default:
+    default:   Cleanup    : open-vm-tools-10.3.10-2.el7.x86_64                       128/236
+    default:
+    default:   Cleanup    : 1:nfs-utils-1.3.0-0.66.el7.x86_64                        129/236
+    default:
+    default:   Cleanup    : 1:NetworkManager-tui-1.18.4-3.el7.x86_64                 130/236
+    default:
+    default:   Cleanup    : rpm-python-4.11.3-43.el7.x86_64                          131/236
+    default:
+    default:   Cleanup    : initscripts-9.49.49-1.el7.x86_64                         132/236
+    default:
+    default:   Cleanup    : rpm-build-libs-4.11.3-43.el7.x86_64                      133/236
+    default:
+    default:   Cleanup    : e2fsprogs-1.42.9-17.el7.x86_64                           134/236
+    default:
+    default:   Cleanup    : 1:openssl-1.0.2k-19.el7.x86_64                           135/236
+    default:
+    default:   Cleanup    : libxml2-python-2.9.1-6.el7.4.x86_64                      136/236
+    default:
+    default:   Cleanup    : 1:NetworkManager-team-1.18.4-3.el7.x86_64                137/236
+    default:
+    default:   Cleanup    : 1:NetworkManager-1.18.4-3.el7.x86_64                     138/236
+    default:
+    default:   Cleanup    : 1:NetworkManager-libnm-1.18.4-3.el7.x86_64               139/236
+    default:
+    default:   Cleanup    : rsyslog-8.24.0-52.el7.x86_64                             140/236
+    default:
+    default:   Cleanup    : gssproxy-0.7.0-28.el7.x86_64                             141/236
+    default:
+    default:   Cleanup    : 1:mariadb-libs-5.5.65-1.el7.x86_64                       142/236
+    default:
+    default:   Cleanup    : 32:bind-export-libs-9.11.4-16.P2.el7_8.2.x86_64          143/236
+    default:
+    default:   Cleanup    : lshw-B.02.18-14.el7.x86_64                               144/236
+    default:
+    default:   Cleanup    : xfsprogs-4.5.0-20.el7.x86_64                             145/236
+    default:
+    default:   Cleanup    : teamd-1.29-1.el7.x86_64                                  146/236
+    default:
+    default:   Cleanup    : python-perf-3.10.0-1127.el7.x86_64                       147/236
+    default:
+    default:   Cleanup    : samba-common-libs-4.10.4-10.el7.x86_64                   148/236
+    default:
+    default:   Cleanup    : samba-libs-4.10.4-10.el7.x86_64                          149/236
+    default:
+    default:   Cleanup    : samba-client-libs-4.10.4-10.el7.x86_64                   150/236
+    default:
+    default:   Cleanup    : libwbclient-4.10.4-10.el7.x86_64                         151/236
+    default:
+    default:   Cleanup    : 1:cups-libs-1.6.3-43.el7.x86_64                          152/236
+    default:
+    default:   Cleanup    : libcroco-0.6.12-4.el7.x86_64                             153/236
+    default:
+    default:   Cleanup    : glib2-2.56.1-5.el7.x86_64                                154/236
+    default:
+    default:   Cleanup    : sudo-1.8.23-9.el7.x86_64                                 155/236
+    default:
+    default:   Cleanup    : kernel-tools-3.10.0-1127.el7.x86_64                      156/236
+    default:
+    default:   Cleanup    : samba-common-4.10.4-10.el7.noarch                        157/236
+    default:
+    default:   Cleanup    : hwdata-0.252-9.5.el7.x86_64                              158/236
+    default:
+    default:   Cleanup    : selinux-policy-3.13.1-266.el7.noarch                     159/236
+    default:
+    default:   Cleanup    : python-firewall-0.6.3-8.el7_8.1.noarch                   160/236
+    default:
+    default:   Cleanup    : 12:dhcp-common-4.2.5-79.el7.centos.x86_64                161/236
+    default:
+    default:   Cleanup    : 12:dhcp-libs-4.2.5-79.el7.centos.x86_64                  162/236
+    default:
+    default:   Cleanup    : 1:grub2-2.02-0.81.el7.centos.x86_64                      163/236
+    default:
+    default:   Cleanup    : 1:grub2-pc-2.02-0.81.el7.centos.x86_64                   164/236
+    default:
+    default:   Cleanup    : 1:grub2-tools-extra-2.02-0.81.el7.centos.x86_64          165/236
+    default:
+    default:   Cleanup    : 1:grub2-tools-2.02-0.81.el7.centos.x86_64                166/236
+    default:
+    default:   Cleanup    : dracut-033-568.el7.x86_64                                167/236
+    default:
+    default:   Cleanup    : python-2.7.5-88.el7.x86_64                               168/236
+    default:
+    default:   Cleanup    : python-libs-2.7.5-88.el7.x86_64                          169/236
+    default:
+    default:   Cleanup    : file-5.11-36.el7.x86_64                                  170/236
+    default:
+    default:   Cleanup    : 1:grub2-tools-minimal-2.02-0.81.el7.centos.x86_64        171/236
+    default:
+    default:   Cleanup    : kpartx-0.4.9-131.el7.x86_64                              172/236
+    default:
+    default:   Cleanup    : 7:device-mapper-1.02.164-7.el7_8.1.x86_64                173/236
+    default:
+    default:   Cleanup    : 7:device-mapper-libs-1.02.164-7.el7_8.1.x86_64           174/236
+    default:
+    default:   Cleanup    : util-linux-2.23.2-63.el7.x86_64                          175/236
+    default:
+    default:   Cleanup    : procps-ng-3.3.10-27.el7.x86_64                           176/236
+    default:
+    default:   Cleanup    : 1:dbus-libs-1.10.24-13.el7_6.x86_64                      177/236
+    default:
+    default:   Cleanup    : systemd-libs-219-73.el7_8.5.x86_64                       178/236
+    default:
+    default:   Cleanup    : elfutils-libs-0.176-4.el7.x86_64                         179/236
+    default:
+    default:   Cleanup    : elfutils-default-yama-scope-0.176-4.el7.noarch           180/236
+    default:
+    default:   Cleanup    : 1:dbus-1.10.24-13.el7_6.x86_64                           181/236
+    default:
+    default:   Cleanup    : systemd-219-73.el7_8.5.x86_64                            182/236
+    default:
+    default:   Cleanup    : openldap-2.4.44-21.el7_6.x86_64                          183/236
+    default:
+    default:   Cleanup    : libcurl-7.29.0-57.el7.x86_64                             184/236
+    default:
+    default:   Cleanup    : curl-7.29.0-57.el7.x86_64                                185/236
+    default:
+    default:   Cleanup    : rpm-libs-4.11.3-43.el7.x86_64                            186/236
+    default:
+    default:   Cleanup    : rpm-4.11.3-43.el7.x86_64                                 187/236
+    default:
+    default:   Cleanup    : nss-tools-3.44.0-7.el7_7.x86_64                          188/236
+    default:
+    default:   Cleanup    : nss-sysinit-3.44.0-7.el7_7.x86_64                        189/236
+    default:
+    default:   Cleanup    : nss-3.44.0-7.el7_7.x86_64                                190/236
+    default:
+    default:   Cleanup    : nss-softokn-3.44.0-8.el7_7.x86_64                        191/236
+    default:
+    default:   Cleanup    : libmount-2.23.2-63.el7.x86_64                            192/236
+    default:
+    default:   Cleanup    : libblkid-2.23.2-63.el7.x86_64                            193/236
+    default:
+    default:   Cleanup    : libssh2-1.8.0-3.el7.x86_64                               194/236
+    default:
+    default:   Cleanup    : freetype-2.8-14.el7.x86_64                               195/236
+    default:
+    default:   Cleanup    : libstdc++-4.8.5-39.el7.x86_64                            196/236
+    default:
+    default:   Cleanup    : e2fsprogs-libs-1.42.9-17.el7.x86_64                      197/236
+    default:
+    default:   Cleanup    : libss-1.42.9-17.el7.x86_64                               198/236
+    default:
+    default:   Cleanup    : iproute-4.11.0-25.el7_7.2.x86_64                         199/236
+    default:
+    default:   Cleanup    : libxslt-1.1.28-5.el7.x86_64                              200/236
+    default:
+    default:   Cleanup    : binutils-2.27-43.base.el7.x86_64                         201/236
+    default:
+    default:   Cleanup    : 1:grub2-pc-modules-2.02-0.81.el7.centos.noarch           202/236
+    default:
+    default:   Cleanup    : krb5-libs-1.15.1-46.el7.x86_64                           203/236
+    default:
+    default:   Cleanup    : coreutils-8.22-24.el7.x86_64                             204/236
+    default:
+    default:   Cleanup    : 1:openssl-libs-1.0.2k-19.el7.x86_64                      205/236
+    default:
+    default:   Cleanup    : libcom_err-1.42.9-17.el7.x86_64                          206/236
+    default:
+    default:   Cleanup    : sed-4.2.2-6.el7.x86_64                                   207/236
+    default:
+    default:   Cleanup    : chkconfig-1.7.4-1.el7.x86_64                             208/236
+    default:
+    default:   Cleanup    : libxml2-2.9.1-6.el7.4.x86_64                             209/236
+    default:
+    default:   Cleanup    : iptables-1.4.21-34.el7.x86_64                            210/236
+    default:
+    default:   Cleanup    : 2:libpng-1.5.13-7.el7_2.x86_64                           211/236
+    default:
+    default:   Cleanup    : libuuid-2.23.2-63.el7.x86_64                             212/236
+    default:
+    default:   Cleanup    : elfutils-libelf-0.176-4.el7.x86_64                       213/236
+    default:
+    default:   Cleanup    : lz4-1.7.5-3.el7.x86_64                                   214/236
+    default:
+    default:   Cleanup    : expat-2.1.0-11.el7.x86_64                                215/236
+    default:
+    default:   Cleanup    : libsmartcols-2.23.2-63.el7.x86_64                        216/236
+    default:
+    default:   Cleanup    : file-libs-5.11-36.el7.x86_64                             217/236
+    default:
+    default:   Cleanup    : cpio-2.11-27.el7.x86_64                                  218/236
+    default:
+    default:   Cleanup    : kernel-tools-libs-3.10.0-1127.el7.x86_64                 219/236
+    default:
+    default:   Cleanup    : 2:vim-minimal-7.4.629-6.el7.x86_64                       220/236
+    default:
+    default:   Cleanup    : libteam-1.29-1.el7.x86_64                                221/236
+    default:
+    default:   Cleanup    : libmspack-0.5-0.7.alpha.el7.x86_64                       222/236
+    default:
+    default:   Cleanup    : libgomp-4.8.5-39.el7.x86_64                              223/236
+    default:
+    default:   Cleanup    : 1:dmidecode-3.2-3.el7.x86_64                             224/236
+    default:
+    default:   Cleanup    : ca-certificates-2019.2.32-76.el7_7.noarch                225/236
+    default:
+    default:   Cleanup    : 1:grub2-common-2.02-0.81.el7.centos.noarch               226/236
+    default:
+    default:   Cleanup    : centos-release-7-8.2003.0.el7.centos.x86_64              227/236
+    default:
+    default:   Cleanup    : firewalld-filesystem-0.6.3-8.el7_8.1.noarch              228/236
+    default:
+    default:   Cleanup    : linux-firmware-20191203-76.gite8a0f4c.el7.noarch         229/236
+    default:
+    default:   Cleanup    : glibc-common-2.17-307.el7.1.x86_64                       230/236
+    default:
+    default:   Cleanup    : nspr-4.21.0-1.el7.x86_64                                 231/236
+    default:
+    default:   Cleanup    : nss-util-3.44.0-4.el7_7.x86_64                           232/236
+    default:
+    default:   Cleanup    : nss-softokn-freebl-3.44.0-8.el7_7.x86_64                 233/236
+    default:
+    default:   Cleanup    : glibc-2.17-307.el7.1.x86_64                              234/236
+    default:
+    default:   Cleanup    : tzdata-2020a-1.el7.noarch                                235/236
+    default:
+    default:   Cleanup    : libgcc-4.8.5-39.el7.x86_64                               236/236
+    default:
+    default:   Verifying  : rpm-4.11.3-45.el7.x86_64                                   1/236
+    default:
+    default:   Verifying  : nss-tools-3.53.1-3.el7_9.x86_64                            2/236
+    default:
+    default:   Verifying  : hwdata-0.252-9.7.el7.x86_64                                3/236
+    default:
+    default:   Verifying  : glibc-common-2.17-317.el7.x86_64                           4/236
+    default:
+    default:   Verifying  : nss-util-3.53.1-1.el7_9.x86_64                             5/236
+    default:
+    default:   Verifying  : selinux-policy-targeted-3.13.1-268.el7_9.2.noarch          6/236
+    default:
+    default:   Verifying  : kernel-tools-3.10.0-1160.11.1.el7.x86_64                   7/236
+    default:
+    default:   Verifying  : libssh2-1.8.0-4.el7.x86_64                                 8/236
+    default:
+    default:   Verifying  : 1:NetworkManager-tui-1.18.8-2.el7_9.x86_64                 9/236
+    default:
+    default:   Verifying  : nspr-4.25.0-2.el7_9.x86_64                                10/236
+    default:
+    default:   Verifying  : centos-release-7-9.2009.1.el7.centos.x86_64               11/236
+    default:
+    default:   Verifying  : open-vm-tools-11.0.5-3.el7_9.1.x86_64                     12/236
+    default:
+    default:   Verifying  : kernel-3.10.0-1160.11.1.el7.x86_64                        13/236
+    default:
+    default:   Verifying  : 1:openssl-1.0.2k-21.el7_9.x86_64                          14/236
+    default:
+    default:   Verifying  : 1:mariadb-libs-5.5.68-1.el7.x86_64                        15/236
+    default:
+    default:   Verifying  : libblkid-2.23.2-65.el7.x86_64                             16/236
+    default:
+    default:   Verifying  : 1:grub2-common-2.02-0.86.el7.centos.noarch                17/236
+    default:
+    default:   Verifying  : 1:NetworkManager-libnm-1.18.8-2.el7_9.x86_64              18/236
+    default:
+    default:   Verifying  : libcurl-7.29.0-59.el7_9.1.x86_64                          19/236
+    default:
+    default:   Verifying  : 12:dhcp-libs-4.2.5-82.el7.centos.x86_64                   20/236
+    default:
+    default:   Verifying  : selinux-policy-3.13.1-268.el7_9.2.noarch                  21/236
+    default:
+    default:   Verifying  : 1:grub2-tools-2.02-0.86.el7.centos.x86_64                 22/236
+    default:
+    default:   Verifying  : 1:openssl-libs-1.0.2k-21.el7_9.x86_64                     23/236
+    default:
+    default:   Verifying  : procps-ng-3.3.10-28.el7.x86_64                            24/236
+    default:
+    default:   Verifying  : libxml2-python-2.9.1-6.el7.5.x86_64                       25/236
+    default:
+    default:   Verifying  : systemd-sysv-219-78.el7_9.2.x86_64                        26/236
+    default:
+    default:   Verifying  : python-libs-2.7.5-90.el7.x86_64                           27/236
+    default:
+    default:   Verifying  : sudo-1.8.23-10.el7.x86_64                                 28/236
+    default:
+    default:   Verifying  : ca-certificates-2020.2.41-70.0.el7_8.noarch               29/236
+    default:
+    default:   Verifying  : libwbclient-4.10.16-9.el7_9.x86_64                        30/236
+    default:
+    default:   Verifying  : freetype-2.8-14.el7_9.1.x86_64                            31/236
+    default:
+    default:   Verifying  : libgcc-4.8.5-44.el7.x86_64                                32/236
+    default:
+    default:   Verifying  : file-5.11-37.el7.x86_64                                   33/236
+    default:
+    default:   Verifying  : libuuid-2.23.2-65.el7.x86_64                              34/236
+    default:
+    default:   Verifying  : firewalld-0.6.3-12.el7.noarch                             35/236
+    default:
+    default:   Verifying  : kpartx-0.4.9-134.el7_9.x86_64                             36/236
+    default:
+    default:   Verifying  : chkconfig-1.7.6-1.el7.x86_64                              37/236
+    default:
+    default:   Verifying  : e2fsprogs-1.42.9-19.el7.x86_64                            38/236
+    default:
+    default:   Verifying  : e2fsprogs-libs-1.42.9-19.el7.x86_64                       39/236
+    default:
+    default:   Verifying  : elfutils-default-yama-scope-0.176-5.el7.noarch            40/236
+    default:
+    default:   Verifying  : dracut-033-572.el7.x86_64                                 41/236
+    default:
+    default:   Verifying  : 1:dbus-libs-1.10.24-15.el7.x86_64                         42/236
+    default:
+    default:   Verifying  : 1:grub2-2.02-0.86.el7.centos.x86_64                       43/236
+    default:
+    default:   Verifying  : 1:cups-libs-1.6.3-51.el7.x86_64                           44/236
+    default:
+    default:   Verifying  : samba-client-libs-4.10.16-9.el7_9.x86_64                  45/236
+    default:
+    default:   Verifying  : initscripts-9.49.53-1.el7_9.1.x86_64                      46/236
+    default:
+    default:   Verifying  : kernel-tools-libs-3.10.0-1160.11.1.el7.x86_64             47/236
+    default:
+    default:   Verifying  : nss-sysinit-3.53.1-3.el7_9.x86_64                         48/236
+    default:
+    default:   Verifying  : 7:device-mapper-1.02.170-6.el7_9.3.x86_64                 49/236
+    default:
+    default:   Verifying  : 7:device-mapper-libs-1.02.170-6.el7_9.3.x86_64            50/236
+    default:
+    default:   Verifying  : nss-softokn-freebl-3.53.1-6.el7_9.x86_64                  51/236
+    default:
+    default:   Verifying  : nss-softokn-3.53.1-6.el7_9.x86_64                         52/236
+    default:
+    default:   Verifying  : rpm-python-4.11.3-45.el7.x86_64                           53/236
+    default:
+    default:   Verifying  : curl-7.29.0-59.el7_9.1.x86_64                             54/236
+    default:
+    default:   Verifying  : rsyslog-8.24.0-57.el7_9.x86_64                            55/236
+    default:
+    default:   Verifying  : 2:vim-minimal-7.4.629-8.el7_9.x86_64                      56/236
+    default:
+    default:   Verifying  : 1:grub2-pc-2.02-0.86.el7.centos.x86_64                    57/236
+    default:
+    default:   Verifying  : krb5-libs-1.15.1-50.el7.x86_64                            58/236
+    default:
+    default:   Verifying  : teamd-1.29-3.el7.x86_64                                   59/236
+    default:
+    default:   Verifying  : glib2-2.56.1-8.el7.x86_64                                 60/236
+    default:
+    default:   Verifying  : rpm-build-libs-4.11.3-45.el7.x86_64                       61/236
+    default:
+    default:   Verifying  : elfutils-libelf-0.176-5.el7.x86_64                        62/236
+    default:
+    default:   Verifying  : python-2.7.5-90.el7.x86_64                                63/236
+    default:
+    default:   Verifying  : binutils-2.27-44.base.el7.x86_64                          64/236
+    default:
+    default:   Verifying  : samba-common-4.10.16-9.el7_9.noarch                       65/236
+    default:
+    default:   Verifying  : nss-3.53.1-3.el7_9.x86_64                                 66/236
+    default:
+    default:   Verifying  : 1:nfs-utils-1.3.0-0.68.el7.x86_64                         67/236
+    default:
+    default:   Verifying  : yum-plugin-fastestmirror-1.1.31-54.el7_8.noarch           68/236
+    default:
+    default:   Verifying  : 1:NetworkManager-team-1.18.8-2.el7_9.x86_64               69/236
+    default:
+    default:   Verifying  : bc-1.06.95-13.el7.x86_64                                  70/236
+    default:
+    default:   Verifying  : libxml2-2.9.1-6.el7.5.x86_64                              71/236
+    default:
+    default:   Verifying  : libmspack-0.5-0.8.alpha.el7.x86_64                        72/236
+    default:
+    default:   Verifying  : 1:dmidecode-3.2-5.el7.x86_64                              73/236
+    default:
+    default:   Verifying  : xfsprogs-4.5.0-22.el7.x86_64                              74/236
+    default:
+    default:   Verifying  : openldap-2.4.44-22.el7.x86_64                             75/236
+    default:
+    default:   Verifying  : file-libs-5.11-37.el7.x86_64                              76/236
+    default:
+    default:   Verifying  : coreutils-8.22-24.el7_9.2.x86_64                          77/236
+    default:
+    default:   Verifying  : 2:libpng-1.5.13-8.el7.x86_64                              78/236
+    default:
+    default:   Verifying  : linux-firmware-20200421-79.git78c0348.el7.noarch          79/236
+    default:
+    default:   Verifying  : 12:dhclient-4.2.5-82.el7.centos.x86_64                    80/236
+    default:
+    default:   Verifying  : libstdc++-4.8.5-44.el7.x86_64                             81/236
+    default:
+    default:   Verifying  : tzdata-2020d-2.el7.noarch                                 82/236
+    default:
+    default:   Verifying  : python-firewall-0.6.3-12.el7.noarch                       83/236
+    default:
+    default:   Verifying  : libgomp-4.8.5-44.el7.x86_64                               84/236
+    default:
+    default:   Verifying  : 1:grub2-pc-modules-2.02-0.86.el7.centos.noarch            85/236
+    default:
+    default:   Verifying  : lz4-1.8.3-1.el7.x86_64                                    86/236
+    default:
+    default:   Verifying  : glibc-2.17-317.el7.x86_64                                 87/236
+    default:
+    default:   Verifying  : python-perf-3.10.0-1160.11.1.el7.x86_64                   88/236
+    default:
+    default:   Verifying  : samba-libs-4.10.16-9.el7_9.x86_64                         89/236
+    default:
+    default:   Verifying  : 1:dbus-1.10.24-15.el7.x86_64                              90/236
+    default:
+    default:   Verifying  : libcom_err-1.42.9-19.el7.x86_64                           91/236
+    default:
+    default:   Verifying  : libcroco-0.6.12-6.el7_9.x86_64                            92/236
+    default:
+    default:   Verifying  : libteam-1.29-3.el7.x86_64                                 93/236
+    default:
+    default:   Verifying  : iproute-4.11.0-30.el7.x86_64                              94/236
+    default:
+    default:   Verifying  : 32:bind-export-libs-9.11.4-26.P2.el7_9.3.x86_64           95/236
+    default:
+    default:   Verifying  : yum-utils-1.1.31-54.el7_8.noarch                          96/236
+    default:
+    default:   Verifying  : 1:NetworkManager-1.18.8-2.el7_9.x86_64                    97/236
+    default:
+    default:   Verifying  : tuned-2.11.0-10.el7.noarch                                98/236
+    default:
+    default:   Verifying  : 12:dhcp-common-4.2.5-82.el7.centos.x86_64                 99/236
+    default:
+    default:   Verifying  : rpm-libs-4.11.3-45.el7.x86_64                            100/236
+    default:
+    default:   Verifying  : gssproxy-0.7.0-29.el7.x86_64                             101/236
+    default:
+    default:   Verifying  : sed-4.2.2-7.el7.x86_64                                   102/236
+    default:
+    default:   Verifying  : expat-2.1.0-12.el7.x86_64                                103/236
+    default:
+    default:   Verifying  : libss-1.42.9-19.el7.x86_64                               104/236
+    default:
+    default:   Verifying  : cpio-2.11-28.el7.x86_64                                  105/236
+    default:
+    default:   Verifying  : 1:grub2-tools-minimal-2.02-0.86.el7.centos.x86_64        106/236
+    default:
+    default:   Verifying  : libmount-2.23.2-65.el7.x86_64                            107/236
+    default:
+    default:   Verifying  : yum-3.4.3-168.el7.centos.noarch                          108/236
+    default:
+    default:   Verifying  : firewalld-filesystem-0.6.3-12.el7.noarch                 109/236
+    default:
+    default:   Verifying  : 1:grub2-tools-extra-2.02-0.86.el7.centos.x86_64          110/236
+    default:
+    default:   Verifying  : libxslt-1.1.28-6.el7.x86_64                              111/236
+    default:
+    default:   Verifying  : iptables-1.4.21-35.el7.x86_64                            112/236
+    default:
+    default:   Verifying  : systemd-libs-219-78.el7_9.2.x86_64                       113/236
+    default:
+    default:   Verifying  : libsmartcols-2.23.2-65.el7.x86_64                        114/236
+    default:
+    default:   Verifying  : lshw-B.02.18-17.el7.x86_64                               115/236
+    default:
+    default:   Verifying  : samba-common-libs-4.10.16-9.el7_9.x86_64                 116/236
+    default:
+    default:   Verifying  : util-linux-2.23.2-65.el7.x86_64                          117/236
+    default:
+    default:   Verifying  : systemd-219-78.el7_9.2.x86_64                            118/236
+    default:
+    default:   Verifying  : elfutils-libs-0.176-5.el7.x86_64                         119/236
+    default:
+    default:   Verifying  : 1:grub2-tools-2.02-0.81.el7.centos.x86_64                120/236
+    default:   Verifying  : kpartx-0.4.9-131.el7.x86_64                              121/236
+    default:   Verifying  : centos-release-7-8.2003.0.el7.centos.x86_64              122/236
+    default:   Verifying  : nss-3.44.0-7.el7_7.x86_64                                123/236
+    default:   Verifying  : libssh2-1.8.0-3.el7.x86_64                               124/236
+    default:   Verifying  : python-2.7.5-88.el7.x86_64                               125/236
+    default:   Verifying  : freetype-2.8-14.el7.x86_64                               126/236
+    default:   Verifying  : libxml2-python-2.9.1-6.el7.4.x86_64                      127/236
+    default:   Verifying  : libmount-2.23.2-63.el7.x86_64                            128/236
+    default:   Verifying  : rpm-build-libs-4.11.3-43.el7.x86_64                      129/236
+    default:   Verifying  : elfutils-libs-0.176-4.el7.x86_64                         130/236
+    default:   Verifying  : util-linux-2.23.2-63.el7.x86_64                          131/236
+    default:
+    default:   Verifying  : 7:device-mapper-libs-1.02.164-7.el7_8.1.x86_64           132/236
+    default:   Verifying  : ca-certificates-2019.2.32-76.el7_7.noarch                133/236
+    default:   Verifying  : sed-4.2.2-6.el7.x86_64                                   134/236
+    default:   Verifying  : selinux-policy-3.13.1-266.el7.noarch                     135/236
+    default:   Verifying  : lz4-1.7.5-3.el7.x86_64                                   136/236
+    default:   Verifying  : initscripts-9.49.49-1.el7.x86_64                         137/236
+    default:   Verifying  : 1:openssl-libs-1.0.2k-19.el7.x86_64                      138/236
+    default:   Verifying  : libteam-1.29-1.el7.x86_64                                139/236
+    default:   Verifying  : yum-utils-1.1.31-53.el7.noarch                           140/236
+    default:   Verifying  : python-perf-3.10.0-1127.el7.x86_64                       141/236
+    default:   Verifying  : libsmartcols-2.23.2-63.el7.x86_64                        142/236
+    default:   Verifying  : 1:grub2-tools-extra-2.02-0.81.el7.centos.x86_64          143/236
+    default:   Verifying  : chkconfig-1.7.4-1.el7.x86_64                             144/236
+    default:   Verifying  : libmspack-0.5-0.7.alpha.el7.x86_64                       145/236
+    default:
+    default:   Verifying  : 1:grub2-tools-minimal-2.02-0.81.el7.centos.x86_64        146/236
+    default:   Verifying  : systemd-219-73.el7_8.5.x86_64                            147/236
+    default:   Verifying  : samba-common-4.10.4-10.el7.noarch                        148/236
+    default:   Verifying  : 2:libpng-1.5.13-7.el7_2.x86_64                           149/236
+    default:   Verifying  : nss-tools-3.44.0-7.el7_7.x86_64                          150/236
+    default:   Verifying  : 1:cups-libs-1.6.3-43.el7.x86_64                          151/236
+    default:   Verifying  : libstdc++-4.8.5-39.el7.x86_64                            152/236
+    default:   Verifying  : iproute-4.11.0-25.el7_7.2.x86_64                         153/236
+    default:   Verifying  : libblkid-2.23.2-63.el7.x86_64                            154/236
+    default:   Verifying  : yum-3.4.3-167.el7.centos.noarch                          155/236
+    default:   Verifying  : open-vm-tools-10.3.10-2.el7.x86_64                       156/236
+    default:   Verifying  : 2:vim-minimal-7.4.629-6.el7.x86_64                       157/236
+    default:   Verifying  : samba-common-libs-4.10.4-10.el7.x86_64                   158/236
+    default:
+    default:   Verifying  : python-libs-2.7.5-88.el7.x86_64                          159/236
+    default:   Verifying  : samba-client-libs-4.10.4-10.el7.x86_64                   160/236
+    default:   Verifying  : nss-sysinit-3.44.0-7.el7_7.x86_64                        161/236
+    default:   Verifying  : firewalld-0.6.3-8.el7_8.1.noarch                         162/236
+    default:   Verifying  : 1:openssl-1.0.2k-19.el7.x86_64                           163/236
+    default:   Verifying  : kernel-tools-libs-3.10.0-1127.el7.x86_64                 164/236
+    default:   Verifying  : elfutils-libelf-0.176-4.el7.x86_64                       165/236
+    default:   Verifying  : 1:NetworkManager-libnm-1.18.4-3.el7.x86_64               166/236
+    default:   Verifying  : libxml2-2.9.1-6.el7.4.x86_64                             167/236
+    default:   Verifying  : tzdata-2020a-1.el7.noarch                                168/236
+    default:   Verifying  : 1:grub2-pc-modules-2.02-0.81.el7.centos.noarch           169/236
+    default:   Verifying  : selinux-policy-targeted-3.13.1-266.el7.noarch            170/236
+    default:   Verifying  : rpm-python-4.11.3-43.el7.x86_64                          171/236
+    default:
+    default:   Verifying  : file-5.11-36.el7.x86_64                                  172/236
+    default:   Verifying  : firewalld-filesystem-0.6.3-8.el7_8.1.noarch              173/236
+    default:   Verifying  : linux-firmware-20191203-76.gite8a0f4c.el7.noarch         174/236
+    default:   Verifying  : nspr-4.21.0-1.el7.x86_64                                 175/236
+    default:   Verifying  : nss-softokn-freebl-3.44.0-8.el7_7.x86_64                 176/236
+    default:   Verifying  : openldap-2.4.44-21.el7_6.x86_64                          177/236
+    default:   Verifying  : nss-softokn-3.44.0-8.el7_7.x86_64                        178/236
+    default:   Verifying  : samba-libs-4.10.4-10.el7.x86_64                          179/236
+    default:   Verifying  : rsyslog-8.24.0-52.el7.x86_64                             180/236
+    default:   Verifying  : 1:dmidecode-3.2-3.el7.x86_64                             181/236
+    default:   Verifying  : 7:device-mapper-1.02.164-7.el7_8.1.x86_64                182/236
+    default:   Verifying  : libcom_err-1.42.9-17.el7.x86_64                          183/236
+    default:
+    default:   Verifying  : 12:dhclient-4.2.5-79.el7.centos.x86_64                   184/236
+    default:   Verifying  : gssproxy-0.7.0-28.el7.x86_64                             185/236
+    default:   Verifying  : cpio-2.11-27.el7.x86_64                                  186/236
+    default:   Verifying  : libcurl-7.29.0-57.el7.x86_64                             187/236
+    default:   Verifying  : file-libs-5.11-36.el7.x86_64                             188/236
+    default:   Verifying  : procps-ng-3.3.10-27.el7.x86_64                           189/236
+    default:   Verifying  : libcroco-0.6.12-4.el7.x86_64                             190/236
+    default:   Verifying  : iptables-1.4.21-34.el7.x86_64                            191/236
+    default:   Verifying  : 12:dhcp-common-4.2.5-79.el7.centos.x86_64                192/236
+    default:   Verifying  : 1:grub2-2.02-0.81.el7.centos.x86_64                      193/236
+    default:   Verifying  : e2fsprogs-1.42.9-17.el7.x86_64                           194/236
+    default:   Verifying  : glibc-common-2.17-307.el7.1.x86_64                       195/236
+    default:   Verifying  : libgomp-4.8.5-39.el7.x86_64                              196/236
+    default:
+    default:   Verifying  : 1:NetworkManager-tui-1.18.4-3.el7.x86_64                 197/236
+    default:   Verifying  : 32:bind-export-libs-9.11.4-16.P2.el7_8.2.x86_64          198/236
+    default:   Verifying  : glibc-2.17-307.el7.1.x86_64                              199/236
+    default:   Verifying  : e2fsprogs-libs-1.42.9-17.el7.x86_64                      200/236
+    default:   Verifying  : 1:dbus-libs-1.10.24-13.el7_6.x86_64                      201/236
+    default:   Verifying  : hwdata-0.252-9.5.el7.x86_64                              202/236
+    default:   Verifying  : libss-1.42.9-17.el7.x86_64                               203/236
+    default:   Verifying  : coreutils-8.22-24.el7.x86_64                             204/236
+    default:   Verifying  : 1:nfs-utils-1.3.0-0.66.el7.x86_64                        205/236
+    default:   Verifying  : python-firewall-0.6.3-8.el7_8.1.noarch                   206/236
+    default:   Verifying  : lshw-B.02.18-14.el7.x86_64                               207/236
+    default:   Verifying  : 1:mariadb-libs-5.5.65-1.el7.x86_64                       208/236
+    default:   Verifying  : systemd-libs-219-73.el7_8.5.x86_64                       209/236
+    default:
+    default:   Verifying  : rpm-libs-4.11.3-43.el7.x86_64                            210/236
+    default:   Verifying  : yum-plugin-fastestmirror-1.1.31-53.el7.noarch            211/236
+    default:   Verifying  : 1:NetworkManager-team-1.18.4-3.el7.x86_64                212/236
+    default:   Verifying  : 1:grub2-pc-2.02-0.81.el7.centos.x86_64                   213/236
+    default:   Verifying  : 1:grub2-common-2.02-0.81.el7.centos.noarch               214/236
+    default:   Verifying  : rpm-4.11.3-43.el7.x86_64                                 215/236
+    default:   Verifying  : krb5-libs-1.15.1-46.el7.x86_64                           216/236
+    default:   Verifying  : 1:NetworkManager-1.18.4-3.el7.x86_64                     217/236
+    default:   Verifying  : curl-7.29.0-57.el7.x86_64                                218/236
+    default:   Verifying  : libgcc-4.8.5-39.el7.x86_64                               219/236
+    default:   Verifying  : 12:dhcp-libs-4.2.5-79.el7.centos.x86_64                  220/236
+    default:   Verifying  : tuned-2.11.0-8.el7.noarch                                221/236
+    default:   Verifying  : elfutils-default-yama-scope-0.176-4.el7.noarch           222/236
+    default:   Verifying  : libwbclient-4.10.4-10.el7.x86_64                         223/236
+    default:
+    default:   Verifying  : dracut-033-568.el7.x86_64                                224/236
+    default:   Verifying  : libxslt-1.1.28-5.el7.x86_64                              225/236
+    default:   Verifying  : nss-util-3.44.0-4.el7_7.x86_64                           226/236
+    default:   Verifying  : binutils-2.27-43.base.el7.x86_64                         227/236
+    default:   Verifying  : kernel-tools-3.10.0-1127.el7.x86_64                      228/236
+    default:   Verifying  : 1:dbus-1.10.24-13.el7_6.x86_64                           229/236
+    default:   Verifying  : systemd-sysv-219-73.el7_8.5.x86_64                       230/236
+    default:   Verifying  : libuuid-2.23.2-63.el7.x86_64                             231/236
+    default:   Verifying  : glib2-2.56.1-5.el7.x86_64                                232/236
+    default:   Verifying  : sudo-1.8.23-9.el7.x86_64                                 233/236
+    default:   Verifying  : expat-2.1.0-11.el7.x86_64                                234/236
+    default:   Verifying  : xfsprogs-4.5.0-20.el7.x86_64                             235/236
+    default:   Verifying  : teamd-1.29-1.el7.x86_64                                  236/236
+    default:
+    default:
+    default: Installed:
+    default:   kernel.x86_64 0:3.10.0-1160.11.1.el7
+    default:
+    default: Dependency Installed:
+    default:   bc.x86_64 0:1.06.95-13.el7
+    default:
+    default: Updated:
+    default:   NetworkManager.x86_64 1:1.18.8-2.el7_9
+    default:   NetworkManager-libnm.x86_64 1:1.18.8-2.el7_9
+    default:   NetworkManager-team.x86_64 1:1.18.8-2.el7_9
+    default:   NetworkManager-tui.x86_64 1:1.18.8-2.el7_9
+    default:   bind-export-libs.x86_64 32:9.11.4-26.P2.el7_9.3
+    default:   binutils.x86_64 0:2.27-44.base.el7
+    default:   ca-certificates.noarch 0:2020.2.41-70.0.el7_8
+    default:   centos-release.x86_64 0:7-9.2009.1.el7.centos
+    default:   chkconfig.x86_64 0:1.7.6-1.el7
+    default:   coreutils.x86_64 0:8.22-24.el7_9.2
+    default:   cpio.x86_64 0:2.11-28.el7
+    default:   cups-libs.x86_64 1:1.6.3-51.el7
+    default:   curl.x86_64 0:7.29.0-59.el7_9.1
+    default:   dbus.x86_64 1:1.10.24-15.el7
+    default:   dbus-libs.x86_64 1:1.10.24-15.el7
+    default:   device-mapper.x86_64 7:1.02.170-6.el7_9.3
+    default:   device-mapper-libs.x86_64 7:1.02.170-6.el7_9.3
+    default:   dhclient.x86_64 12:4.2.5-82.el7.centos
+    default:   dhcp-common.x86_64 12:4.2.5-82.el7.centos
+    default:   dhcp-libs.x86_64 12:4.2.5-82.el7.centos
+    default:   dmidecode.x86_64 1:3.2-5.el7
+    default:   dracut.x86_64 0:033-572.el7
+    default:   e2fsprogs.x86_64 0:1.42.9-19.el7
+    default:   e2fsprogs-libs.x86_64 0:1.42.9-19.el7
+    default:   elfutils-default-yama-scope.noarch 0:0.176-5.el7
+    default:   elfutils-libelf.x86_64 0:0.176-5.el7
+    default:   elfutils-libs.x86_64 0:0.176-5.el7
+    default:   expat.x86_64 0:2.1.0-12.el7
+    default:   file.x86_64 0:5.11-37.el7
+    default:   file-libs.x86_64 0:5.11-37.el7
+    default:   firewalld.noarch 0:0.6.3-12.el7
+    default:   firewalld-filesystem.noarch 0:0.6.3-12.el7
+    default:   freetype.x86_64 0:2.8-14.el7_9.1
+    default:   glib2.x86_64 0:2.56.1-8.el7
+    default:   glibc.x86_64 0:2.17-317.el7
+    default:   glibc-common.x86_64 0:2.17-317.el7
+    default:   grub2.x86_64 1:2.02-0.86.el7.centos
+    default:   grub2-common.noarch 1:2.02-0.86.el7.centos
+    default:   grub2-pc.x86_64 1:2.02-0.86.el7.centos
+    default:   grub2-pc-modules.noarch 1:2.02-0.86.el7.centos
+    default:   grub2-tools.x86_64 1:2.02-0.86.el7.centos
+    default:   grub2-tools-extra.x86_64 1:2.02-0.86.el7.centos
+    default:   grub2-tools-minimal.x86_64 1:2.02-0.86.el7.centos
+    default:   gssproxy.x86_64 0:0.7.0-29.el7
+    default:   hwdata.x86_64 0:0.252-9.7.el7
+    default:   initscripts.x86_64 0:9.49.53-1.el7_9.1
+    default:   iproute.x86_64 0:4.11.0-30.el7
+    default:   iptables.x86_64 0:1.4.21-35.el7
+    default:   kernel-tools.x86_64 0:3.10.0-1160.11.1.el7
+    default:   kernel-tools-libs.x86_64 0:3.10.0-1160.11.1.el7
+    default:   kpartx.x86_64 0:0.4.9-134.el7_9
+    default:   krb5-libs.x86_64 0:1.15.1-50.el7
+    default:   libblkid.x86_64 0:2.23.2-65.el7
+    default:   libcom_err.x86_64 0:1.42.9-19.el7
+    default:   libcroco.x86_64 0:0.6.12-6.el7_9
+    default:   libcurl.x86_64 0:7.29.0-59.el7_9.1
+    default:   libgcc.x86_64 0:4.8.5-44.el7
+    default:   libgomp.x86_64 0:4.8.5-44.el7
+    default:   libmount.x86_64 0:2.23.2-65.el7
+    default:   libmspack.x86_64 0:0.5-0.8.alpha.el7
+    default:   libpng.x86_64 2:1.5.13-8.el7
+    default:   libsmartcols.x86_64 0:2.23.2-65.el7
+    default:   libss.x86_64 0:1.42.9-19.el7
+    default:   libssh2.x86_64 0:1.8.0-4.el7
+    default:   libstdc++.x86_64 0:4.8.5-44.el7
+    default:   libteam.x86_64 0:1.29-3.el7
+    default:   libuuid.x86_64 0:2.23.2-65.el7
+    default:   libwbclient.x86_64 0:4.10.16-9.el7_9
+    default:   libxml2.x86_64 0:2.9.1-6.el7.5
+    default:   libxml2-python.x86_64 0:2.9.1-6.el7.5
+    default:   libxslt.x86_64 0:1.1.28-6.el7
+    default:   linux-firmware.noarch 0:20200421-79.git78c0348.el7
+    default:   lshw.x86_64 0:B.02.18-17.el7
+    default:   lz4.x86_64 0:1.8.3-1.el7
+    default:   mariadb-libs.x86_64 1:5.5.68-1.el7
+    default:   nfs-utils.x86_64 1:1.3.0-0.68.el7
+    default:   nspr.x86_64 0:4.25.0-2.el7_9
+    default:   nss.x86_64 0:3.53.1-3.el7_9
+    default:   nss-softokn.x86_64 0:3.53.1-6.el7_9
+    default:   nss-softokn-freebl.x86_64 0:3.53.1-6.el7_9
+    default:   nss-sysinit.x86_64 0:3.53.1-3.el7_9
+    default:   nss-tools.x86_64 0:3.53.1-3.el7_9
+    default:   nss-util.x86_64 0:3.53.1-1.el7_9
+    default:   open-vm-tools.x86_64 0:11.0.5-3.el7_9.1
+    default:   openldap.x86_64 0:2.4.44-22.el7
+    default:   openssl.x86_64 1:1.0.2k-21.el7_9
+    default:   openssl-libs.x86_64 1:1.0.2k-21.el7_9
+    default:   procps-ng.x86_64 0:3.3.10-28.el7
+    default:   python.x86_64 0:2.7.5-90.el7
+    default:   python-firewall.noarch 0:0.6.3-12.el7
+    default:   python-libs.x86_64 0:2.7.5-90.el7
+    default:   python-perf.x86_64 0:3.10.0-1160.11.1.el7
+    default:   rpm.x86_64 0:4.11.3-45.el7
+    default:   rpm-build-libs.x86_64 0:4.11.3-45.el7
+    default:   rpm-libs.x86_64 0:4.11.3-45.el7
+    default:   rpm-python.x86_64 0:4.11.3-45.el7
+    default:   rsyslog.x86_64 0:8.24.0-57.el7_9
+    default:   samba-client-libs.x86_64 0:4.10.16-9.el7_9
+    default:   samba-common.noarch 0:4.10.16-9.el7_9
+    default:   samba-common-libs.x86_64 0:4.10.16-9.el7_9
+    default:   samba-libs.x86_64 0:4.10.16-9.el7_9
+    default:   sed.x86_64 0:4.2.2-7.el7
+    default:   selinux-policy.noarch 0:3.13.1-268.el7_9.2
+    default:   selinux-policy-targeted.noarch 0:3.13.1-268.el7_9.2
+    default:   sudo.x86_64 0:1.8.23-10.el7
+    default:   systemd.x86_64 0:219-78.el7_9.2
+    default:   systemd-libs.x86_64 0:219-78.el7_9.2
+    default:   systemd-sysv.x86_64 0:219-78.el7_9.2
+    default:   teamd.x86_64 0:1.29-3.el7
+    default:   tuned.noarch 0:2.11.0-10.el7
+    default:   tzdata.noarch 0:2020d-2.el7
+    default:   util-linux.x86_64 0:2.23.2-65.el7
+    default:   vim-minimal.x86_64 2:7.4.629-8.el7_9
+    default:   xfsprogs.x86_64 0:4.5.0-22.el7
+    default:   yum.noarch 0:3.4.3-168.el7.centos
+    default:   yum-plugin-fastestmirror.noarch 0:1.1.31-54.el7_8
+    default:   yum-utils.noarch 0:1.1.31-54.el7_8
+    default:
+    default: Complete!
+    default: Loaded plugins: fastestmirror
+    default: Loading mirror speeds from cached hostfile
+    default:  * base: mirrors.huaweicloud.com
+    default:  * extras: mirrors.bfsu.edu.cn
+    default:  * updates: mirrors.huaweicloud.com
+    default: Resolving Dependencies
+    default: --> Running transaction check
+    default: ---> Package epel-release.noarch 0:7-11 will be installed
+    default: --> Finished Dependency Resolution
+    default:
+    default: Dependencies Resolved
+    default:
+    default: ================================================================================
+    default:  Package                Arch             Version         Repository        Size
+    default: ================================================================================
+    default: Installing:
+    default:  epel-release           noarch           7-11            extras            15 k
+    default:
+    default: Transaction Summary
+    default: ================================================================================
+    default: Install  1 Package
+    default:
+    default: Total download size: 15 k
+    default: Installed size: 24 k
+    default: Downloading packages:
+    default: Running transaction check
+    default: Running transaction test
+    default: Transaction test succeeded
+    default: Running transaction
+    default:   Installing : epel-release-7-11.noarch                                     1/1
+    default:
+    default:   Verifying  : epel-release-7-11.noarch                                     1/1
+    default:
+    default:
+    default: Installed:
+    default:   epel-release.noarch 0:7-11
+    default:
+    default: Complete!
+    default: Loaded plugins: fastestmirror
+    default: Loading mirror speeds from cached hostfile
+    default:  * base: mirrors.huaweicloud.com
+    default:  * epel: mirrors.bfsu.edu.cn
+    default:  * extras: mirrors.bfsu.edu.cn
+    default:  * updates: mirrors.huaweicloud.com
+    default: Resolving Dependencies
+    default: --> Running transaction check
+    default: ---> Package cobbler.x86_64 0:2.8.5-0.3.el7 will be installed
+    default: --> Processing Dependency: createrepo for package: cobbler-2.8.5-0.3.el7.x86_64
+    default: --> Processing Dependency: genisoimage for package: cobbler-2.8.5-0.3.el7.x86_64
+    default: --> Processing Dependency: httpd for package: cobbler-2.8.5-0.3.el7.x86_64
+    default: --> Processing Dependency: mod_wsgi for package: cobbler-2.8.5-0.3.el7.x86_64
+    default: --> Processing Dependency: python-cheetah for package: cobbler-2.8.5-0.3.el7.x86_64
+    default: --> Processing Dependency: python-netaddr for package: cobbler-2.8.5-0.3.el7.x86_64
+    default: --> Processing Dependency: python2-pyyaml for package: cobbler-2.8.5-0.3.el7.x86_64
+    default: --> Processing Dependency: python2-simplejson for package: cobbler-2.8.5-0.3.el7.x86_64
+    default: --> Processing Dependency: tftp-server for package: cobbler-2.8.5-0.3.el7.x86_64
+    default: ---> Package cobbler-web.noarch 0:2.8.5-0.3.el7 will be installed
+    default: --> Processing Dependency: Django > 1.6 for package: cobbler-web-2.8.5-0.3.el7.noarch
+    default: --> Processing Dependency: mod_ssl for package: cobbler-web-2.8.5-0.3.el7.noarch
+    default: --> Processing Dependency: python-ipaddress for package: cobbler-web-2.8.5-0.3.el7.noarch
+    default: --> Processing Dependency: python2-django for package: cobbler-web-2.8.5-0.3.el7.noarch
+    default: ---> Package dhcp.x86_64 12:4.2.5-82.el7.centos will be installed
+    default: ---> Package pykickstart.noarch 0:1.99.66.22-1.el7 will be installed
+    default: ---> Package syslinux.x86_64 0:4.05-15.el7 will be installed
+    default: --> Processing Dependency: mtools for package: syslinux-4.05-15.el7.x86_64
+    default: --> Running transaction check
+    default: ---> Package createrepo.noarch 0:0.9.9-28.el7 will be installed
+    default: --> Processing Dependency: python-deltarpm for package: createrepo-0.9.9-28.el7.noarch
+    default: ---> Package genisoimage.x86_64 0:1.1.11-25.el7 will be installed
+    default: --> Processing Dependency: libusal = 1.1.11-25.el7 for package: genisoimage-1.1.11-25.el7.x86_64
+    default: --> Processing Dependency: libusal.so.0()(64bit) for package: genisoimage-1.1.11-25.el7.x86_64
+    default: --> Processing Dependency: librols.so.0()(64bit) for package: genisoimage-1.1.11-25.el7.x86_64
+    default: ---> Package httpd.x86_64 0:2.4.6-97.el7.centos will be installed
+    default: --> Processing Dependency: httpd-tools = 2.4.6-97.el7.centos for package: httpd-2.4.6-97.el7.centos.x86_64
+    default: --> Processing Dependency: system-logos >= 7.92.1-1 for package: httpd-2.4.6-97.el7.centos.x86_64
+    default: --> Processing Dependency: /etc/mime.types for package: httpd-2.4.6-97.el7.centos.x86_64
+    default: --> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.6-97.el7.centos.x86_64
+    default: --> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.6-97.el7.centos.x86_64
+    default: ---> Package mod_ssl.x86_64 1:2.4.6-97.el7.centos will be installed
+    default: ---> Package mod_wsgi.x86_64 0:3.4-18.el7 will be installed
+    default: ---> Package mtools.x86_64 0:4.0.18-5.el7 will be installed
+    default: ---> Package python-cheetah.x86_64 0:2.4.4-5.el7.centos will be installed
+    default: --> Processing Dependency: python-pygments for package: python-cheetah-2.4.4-5.el7.centos.x86_64
+    default: --> Processing Dependency: python-markdown for package: python-cheetah-2.4.4-5.el7.centos.x86_64
+    default: ---> Package python-ipaddress.noarch 0:1.0.16-2.el7 will be installed
+    default: ---> Package python-netaddr.noarch 0:0.7.5-9.el7 will be installed
+    default: ---> Package python2-django.noarch 0:1.11.27-1.el7 will be installed
+    default: --> Processing Dependency: python-django-bash-completion = 1.11.27-1.el7 for package: python2-django-1.11.27-1.el7.noarch
+    default: --> Processing Dependency: pytz for package: python2-django-1.11.27-1.el7.noarch
+    default: ---> Package python2-pyyaml.noarch 0:3.10-0.el7 will be installed
+    default: --> Processing Dependency: PyYAML >= 3.10 for package: python2-pyyaml-3.10-0.el7.noarch
+    default: ---> Package python2-simplejson.x86_64 0:3.10.0-2.el7 will be installed
+    default: ---> Package tftp-server.x86_64 0:5.2-22.el7 will be installed
+    default: --> Running transaction check
+    default: ---> Package PyYAML.x86_64 0:3.10-11.el7 will be installed
+    default: --> Processing Dependency: libyaml-0.so.2()(64bit) for package: PyYAML-3.10-11.el7.x86_64
+    default: ---> Package apr.x86_64 0:1.4.8-7.el7 will be installed
+    default: ---> Package apr-util.x86_64 0:1.5.2-6.el7 will be installed
+    default: ---> Package centos-logos.noarch 0:70.0.6-3.el7.centos will be installed
+    default: ---> Package httpd-tools.x86_64 0:2.4.6-97.el7.centos will be installed
+    default: ---> Package libusal.x86_64 0:1.1.11-25.el7 will be installed
+    default: ---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed
+    default: ---> Package python-deltarpm.x86_64 0:3.6-3.el7 will be installed
+    default: ---> Package python-django-bash-completion.noarch 0:1.11.27-1.el7 will be installed
+    default: ---> Package python-pygments.noarch 0:1.4-10.el7 will be installed
+    default: --> Processing Dependency: python-setuptools for package: python-pygments-1.4-10.el7.noarch
+    default: --> Processing Dependency: python-imaging for package: python-pygments-1.4-10.el7.noarch
+    default: ---> Package python2-markdown.noarch 0:2.4.1-4.el7 will be installed
+    default: ---> Package pytz.noarch 0:2016.10-2.el7 will be installed
+    default: --> Running transaction check
+    default: ---> Package libyaml.x86_64 0:0.1.4-11.el7_0 will be installed
+    default: ---> Package python-pillow.x86_64 0:2.0.0-21.gitd1c6db8.el7 will be installed
+    default: --> Processing Dependency: libtiff.so.5(LIBTIFF_4.0)(64bit) for package: python-pillow-2.0.0-21.gitd1c6db8.el7.x86_64
+    default: --> Processing Dependency: libjpeg.so.62(LIBJPEG_6.2)(64bit) for package: python-pillow-2.0.0-21.gitd1c6db8.el7.x86_64
+    default: --> Processing Dependency: libwebp.so.4()(64bit) for package: python-pillow-2.0.0-21.gitd1c6db8.el7.x86_64
+    default: --> Processing Dependency: libtiff.so.5()(64bit) for package: python-pillow-2.0.0-21.gitd1c6db8.el7.x86_64
+    default: --> Processing Dependency: libjpeg.so.62()(64bit) for package: python-pillow-2.0.0-21.gitd1c6db8.el7.x86_64
+    default: ---> Package python-setuptools.noarch 0:0.9.8-7.el7 will be installed
+    default: --> Processing Dependency: python-backports-ssl_match_hostname for package: python-setuptools-0.9.8-7.el7.noarch
+    default: --> Running transaction check
+    default: ---> Package libjpeg-turbo.x86_64 0:1.2.90-8.el7 will be installed
+    default: ---> Package libtiff.x86_64 0:4.0.3-35.el7 will be installed
+    default: --> Processing Dependency: libjbig.so.2.0()(64bit) for package: libtiff-4.0.3-35.el7.x86_64
+    default: ---> Package libwebp.x86_64 0:0.3.0-7.el7 will be installed
+    default: ---> Package python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7 will be installed
+    default: --> Processing Dependency: python-backports for package: python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch
+    default: --> Running transaction check
+    default: ---> Package jbigkit-libs.x86_64 0:2.0-11.el7 will be installed
+    default: ---> Package python-backports.x86_64 0:1.0-8.el7 will be installed
+    default: --> Finished Dependency Resolution
+    default:
+    default: Dependencies Resolved
+    default:
+    default: ================================================================================
+    default:  Package                           Arch   Version                 Repository
+    default:                                                                            Size
+    default: ================================================================================
+    default: Installing:
+    default:  cobbler                           x86_64 2.8.5-0.3.el7           epel    580 k
+    default:  cobbler-web                       noarch 2.8.5-0.3.el7           epel    289 k
+    default:  dhcp                              x86_64 12:4.2.5-82.el7.centos  base    515 k
+    default:  pykickstart                       noarch 1.99.66.22-1.el7        base    367 k
+    default:  syslinux                          x86_64 4.05-15.el7             base    990 k
+    default: Installing for dependencies:
+    default:  PyYAML                            x86_64 3.10-11.el7             base    153 k
+    default:  apr                               x86_64 1.4.8-7.el7             base    104 k
+    default:  apr-util                          x86_64 1.5.2-6.el7             base     92 k
+    default:  centos-logos                      noarch 70.0.6-3.el7.centos     base     21 M
+    default:  createrepo                        noarch 0.9.9-28.el7            base     94 k
+    default:  genisoimage                       x86_64 1.1.11-25.el7           base    299 k
+    default:  httpd                             x86_64 2.4.6-97.el7.centos     updates 2.7 M
+    default:  httpd-tools                       x86_64 2.4.6-97.el7.centos     updates  93 k
+    default:  jbigkit-libs                      x86_64 2.0-11.el7              base     46 k
+    default:  libjpeg-turbo                     x86_64 1.2.90-8.el7            base    135 k
+    default:  libtiff                           x86_64 4.0.3-35.el7            base    172 k
+    default:  libusal                           x86_64 1.1.11-25.el7           base    136 k
+    default:  libwebp                           x86_64 0.3.0-7.el7             base    170 k
+    default:  libyaml                           x86_64 0.1.4-11.el7_0          base     55 k
+    default:  mailcap                           noarch 2.1.41-2.el7            base     31 k
+    default:  mod_ssl                           x86_64 1:2.4.6-97.el7.centos   updates 114 k
+    default:  mod_wsgi                          x86_64 3.4-18.el7              base     77 k
+    default:  mtools                            x86_64 4.0.18-5.el7            base    203 k
+    default:  python-backports                  x86_64 1.0-8.el7               base    5.8 k
+    default:  python-backports-ssl_match_hostname
+    default:                                    noarch 3.5.0.1-1.el7           base     13 k
+    default:  python-cheetah                    x86_64 2.4.4-5.el7.centos      extras  341 k
+    default:  python-deltarpm                   x86_64 3.6-3.el7               base     31 k
+    default:  python-django-bash-completion     noarch 1.11.27-1.el7           epel     10 k
+    default:  python-ipaddress                  noarch 1.0.16-2.el7            base     34 k
+    default:  python-netaddr                    noarch 0.7.5-9.el7             base    983 k
+    default:  python-pillow                     x86_64 2.0.0-21.gitd1c6db8.el7 base    439 k
+    default:  python-pygments                   noarch 1.4-10.el7              base    599 k
+    default:  python-setuptools                 noarch 0.9.8-7.el7             base    397 k
+    default:  python2-django                    noarch 1.11.27-1.el7           epel    4.2 M
+    default:  python2-markdown                  noarch 2.4.1-4.el7             epel    250 k
+    default:  python2-pyyaml                    noarch 3.10-0.el7              epel    3.0 k
+    default:  python2-simplejson                x86_64 3.10.0-2.el7            epel    188 k
+    default:  pytz                              noarch 2016.10-2.el7           base     46 k
+    default:  tftp-server                       x86_64 5.2-22.el7              base     47 k
+    default:
+    default: Transaction Summary
+    default: ================================================================================
+    default: Install  5 Packages (+34 Dependent packages)
+    default: Total download size: 36 M
+    default: Installed size: 77 M
+    default: Downloading packages:
+    default: Public key for cobbler-2.8.5-0.3.el7.x86_64.rpm is not installed
+    default: warning: /var/cache/yum/x86_64/7/epel/packages/cobbler-2.8.5-0.3.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 352c64e5: NOKEY
+    default: --------------------------------------------------------------------------------
+    default: Total                                              9.9 MB/s |  36 MB  00:03
+    default: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    default: Importing GPG key 0x352C64E5:
+    default:  Userid     : "Fedora EPEL (7) <epel@fedoraproject.org>"
+    default:  Fingerprint: 91e9 7d7c 4a5e 96f1 7f3e 888f 6a2f aea2 352c 64e5
+    default:  Package    : epel-release-7-11.noarch (@extras)
+    default:  From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+    default: Running transaction check
+    default: Running transaction test
+    default: Transaction test succeeded
+    default: Running transaction
+    default:   Installing : apr-1.4.8-7.el7.x86_64                                      1/39
+    default:
+    default:   Installing : apr-util-1.5.2-6.el7.x86_64                                 2/39
+    default:
+    default:   Installing : python-ipaddress-1.0.16-2.el7.noarch                        3/39
+    default:
+    default:   Installing : libjpeg-turbo-1.2.90-8.el7.x86_64                           4/39
+    default:
+    default:   Installing : httpd-tools-2.4.6-97.el7.centos.x86_64                      5/39
+    default:
+    default:   Installing : python2-markdown-2.4.1-4.el7.noarch                         6/39
+    default:
+    default:   Installing : python-deltarpm-3.6-3.el7.x86_64                            7/39
+    default:
+    default:   Installing : createrepo-0.9.9-28.el7.noarch                              8/39
+    default:
+    default:   Installing : python-netaddr-0.7.5-9.el7.noarch                           9/39
+    default:
+    default:   Installing : libyaml-0.1.4-11.el7_0.x86_64                              10/39
+    default:
+    default:   Installing : PyYAML-3.10-11.el7.x86_64                                  11/39
+    default:
+    default:   Installing : python2-pyyaml-3.10-0.el7.noarch                           12/39
+    default:
+    default:   Installing : python-django-bash-completion-1.11.27-1.el7.noarch         13/39
+    default:
+    default:   Installing : jbigkit-libs-2.0-11.el7.x86_64                             14/39
+    default:
+    default:   Installing : libtiff-4.0.3-35.el7.x86_64                                15/39
+    default:
+    default:   Installing : tftp-server-5.2-22.el7.x86_64                              16/39
+    default:
+    default:   Installing : python-backports-1.0-8.el7.x86_64                          17/39
+    default:
+    default:   Installing : python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch   18/39
+    default:
+    default:   Installing : python-setuptools-0.9.8-7.el7.noarch                       19/39
+    default:
+    default:   Installing : python2-simplejson-3.10.0-2.el7.x86_64                     20/39
+    default:
+    default:   Installing : mtools-4.0.18-5.el7.x86_64                                 21/39
+    default:
+    default:   Installing : syslinux-4.05-15.el7.x86_64                                22/39
+    default:
+    default:   Installing : pytz-2016.10-2.el7.noarch                                  23/39
+    default:
+    default:   Installing : python2-django-1.11.27-1.el7.noarch                        24/39
+    default:
+    default:   Installing : centos-logos-70.0.6-3.el7.centos.noarch                    25/39
+    default:
+    default:   Installing : mailcap-2.1.41-2.el7.noarch                                26/39
+    default:
+    default:   Installing : httpd-2.4.6-97.el7.centos.x86_64                           27/39
+    default:
+    default:   Installing : mod_wsgi-3.4-18.el7.x86_64                                 28/39
+    default:
+    default:   Installing : 1:mod_ssl-2.4.6-97.el7.centos.x86_64                       29/39
+    default:
+    default:   Installing : libwebp-0.3.0-7.el7.x86_64                                 30/39
+    default:
+    default:   Installing : python-pillow-2.0.0-21.gitd1c6db8.el7.x86_64               31/39
+    default:
+    default:   Installing : python-pygments-1.4-10.el7.noarch                          32/39
+    default:
+    default:   Installing : python-cheetah-2.4.4-5.el7.centos.x86_64                   33/39
+    default:
+    default:   Installing : libusal-1.1.11-25.el7.x86_64                               34/39
+    default:
+    default:   Installing : genisoimage-1.1.11-25.el7.x86_64                           35/39
+    default:
+    default:   Installing : cobbler-2.8.5-0.3.el7.x86_64                               36/39
+    default:
+    default:   Installing : cobbler-web-2.8.5-0.3.el7.noarch                           37/39
+    default:
+    default:   Installing : 12:dhcp-4.2.5-82.el7.centos.x86_64                         38/39
+    default:
+    default:   Installing : pykickstart-1.99.66.22-1.el7.noarch                        39/39
+    default:
+    default:   Verifying  : pykickstart-1.99.66.22-1.el7.noarch                         1/39
+    default:
+    default:   Verifying  : libusal-1.1.11-25.el7.x86_64                                2/39
+    default:
+    default:   Verifying  : libwebp-0.3.0-7.el7.x86_64                                  3/39
+    default:
+    default:   Verifying  : mailcap-2.1.41-2.el7.noarch                                 4/39
+    default:
+    default:   Verifying  : cobbler-2.8.5-0.3.el7.x86_64                                5/39
+    default:
+    default:   Verifying  : python2-pyyaml-3.10-0.el7.noarch                            6/39
+    default:
+    default:   Verifying  : python-setuptools-0.9.8-7.el7.noarch                        7/39
+    default:
+    default:   Verifying  : centos-logos-70.0.6-3.el7.centos.noarch                     8/39
+    default:
+    default:   Verifying  : python-backports-ssl_match_hostname-3.5.0.1-1.el7.noarch    9/39
+    default:
+    default:   Verifying  : python2-django-1.11.27-1.el7.noarch                        10/39
+    default:
+    default:   Verifying  : python-pygments-1.4-10.el7.noarch                          11/39
+    default:
+    default:   Verifying  : python-cheetah-2.4.4-5.el7.centos.x86_64                   12/39
+    default:
+    default:   Verifying  : libtiff-4.0.3-35.el7.x86_64                                13/39
+    default:
+    default:   Verifying  : apr-1.4.8-7.el7.x86_64                                     14/39
+    default:
+    default:   Verifying  : pytz-2016.10-2.el7.noarch                                  15/39
+    default:
+    default:   Verifying  : python-pillow-2.0.0-21.gitd1c6db8.el7.x86_64               16/39
+    default:
+    default:   Verifying  : httpd-2.4.6-97.el7.centos.x86_64                           17/39
+    default:
+    default:   Verifying  : mod_wsgi-3.4-18.el7.x86_64                                 18/39
+    default:
+    default:   Verifying  : mtools-4.0.18-5.el7.x86_64                                 19/39
+    default:
+    default:   Verifying  : libjpeg-turbo-1.2.90-8.el7.x86_64                          20/39
+    default:
+    default:   Verifying  : cobbler-web-2.8.5-0.3.el7.noarch                           21/39
+    default:
+    default:   Verifying  : python2-simplejson-3.10.0-2.el7.x86_64                     22/39
+    default:
+    default:   Verifying  : apr-util-1.5.2-6.el7.x86_64                                23/39
+    default:
+    default:   Verifying  : python-backports-1.0-8.el7.x86_64                          24/39
+    default:
+    default:   Verifying  : createrepo-0.9.9-28.el7.noarch                             25/39
+    default:
+    default:   Verifying  : syslinux-4.05-15.el7.x86_64                                26/39
+    default:
+    default:   Verifying  : httpd-tools-2.4.6-97.el7.centos.x86_64                     27/39
+    default:
+    default:   Verifying  : tftp-server-5.2-22.el7.x86_64                              28/39
+    default:
+    default:   Verifying  : jbigkit-libs-2.0-11.el7.x86_64                             29/39
+    default:
+    default:   Verifying  : 12:dhcp-4.2.5-82.el7.centos.x86_64                         30/39
+    default:
+    default:   Verifying  : python-django-bash-completion-1.11.27-1.el7.noarch         31/39
+    default:
+    default:   Verifying  : libyaml-0.1.4-11.el7_0.x86_64                              32/39
+    default:
+    default:   Verifying  : python-netaddr-0.7.5-9.el7.noarch                          33/39
+    default:
+    default:   Verifying  : python-deltarpm-3.6-3.el7.x86_64                           34/39
+    default:
+    default:   Verifying  : python2-markdown-2.4.1-4.el7.noarch                        35/39
+    default:
+    default:   Verifying  : python-ipaddress-1.0.16-2.el7.noarch                       36/39
+    default:
+    default:   Verifying  : 1:mod_ssl-2.4.6-97.el7.centos.x86_64                       37/39
+    default:
+    default:   Verifying  : PyYAML-3.10-11.el7.x86_64                                  38/39
+    default:
+    default:   Verifying  : genisoimage-1.1.11-25.el7.x86_64                           39/39
+    default:
+    default:
+    default: Installed:
+    default:   cobbler.x86_64 0:2.8.5-0.3.el7        cobbler-web.noarch 0:2.8.5-0.3.el7
+    default:   dhcp.x86_64 12:4.2.5-82.el7.centos    pykickstart.noarch 0:1.99.66.22-1.el7
+    default:   syslinux.x86_64 0:4.05-15.el7
+    default:
+    default: Dependency Installed:
+    default:   PyYAML.x86_64 0:3.10-11.el7
+    default:   apr.x86_64 0:1.4.8-7.el7
+    default:   apr-util.x86_64 0:1.5.2-6.el7
+    default:   centos-logos.noarch 0:70.0.6-3.el7.centos
+    default:   createrepo.noarch 0:0.9.9-28.el7
+    default:   genisoimage.x86_64 0:1.1.11-25.el7
+    default:   httpd.x86_64 0:2.4.6-97.el7.centos
+    default:   httpd-tools.x86_64 0:2.4.6-97.el7.centos
+    default:   jbigkit-libs.x86_64 0:2.0-11.el7
+    default:   libjpeg-turbo.x86_64 0:1.2.90-8.el7
+    default:   libtiff.x86_64 0:4.0.3-35.el7
+    default:   libusal.x86_64 0:1.1.11-25.el7
+    default:   libwebp.x86_64 0:0.3.0-7.el7
+    default:   libyaml.x86_64 0:0.1.4-11.el7_0
+    default:   mailcap.noarch 0:2.1.41-2.el7
+    default:   mod_ssl.x86_64 1:2.4.6-97.el7.centos
+    default:   mod_wsgi.x86_64 0:3.4-18.el7
+    default:   mtools.x86_64 0:4.0.18-5.el7
+    default:   python-backports.x86_64 0:1.0-8.el7
+    default:   python-backports-ssl_match_hostname.noarch 0:3.5.0.1-1.el7
+    default:   python-cheetah.x86_64 0:2.4.4-5.el7.centos
+    default:   python-deltarpm.x86_64 0:3.6-3.el7
+    default:   python-django-bash-completion.noarch 0:1.11.27-1.el7
+    default:   python-ipaddress.noarch 0:1.0.16-2.el7
+    default:   python-netaddr.noarch 0:0.7.5-9.el7
+    default:   python-pillow.x86_64 0:2.0.0-21.gitd1c6db8.el7
+    default:   python-pygments.noarch 0:1.4-10.el7
+    default:   python-setuptools.noarch 0:0.9.8-7.el7
+    default:   python2-django.noarch 0:1.11.27-1.el7
+    default:   python2-markdown.noarch 0:2.4.1-4.el7
+    default:   python2-pyyaml.noarch 0:3.10-0.el7
+    default:   python2-simplejson.x86_64 0:3.10.0-2.el7
+    default:   pytz.noarch 0:2016.10-2.el7
+    default:   tftp-server.x86_64 0:5.2-22.el7
+    default:
+    default: Complete!
+    default: Created symlink from /etc/systemd/system/multi-user.target.wants/cobblerd.service to /usr/lib/systemd/system/cobblerd.service.
+    default: Created symlink from /etc/systemd/system/multi-user.target.wants/httpd.service to /usr/lib/systemd/system/httpd.service.
+    default: Created symlink from /etc/systemd/system/multi-user.target.wants/dhcpd.service to /usr/lib/systemd/system/dhcpd.service.
+    default: task started: 2021-01-17_041122_get_loaders
+    default: task started (id=Download Bootloader Content, time=Sun Jan 17 04:11:22 2021)
+    default: downloading https://cobbler.github.io/loaders/README to /var/lib/cobbler/loaders/README
+    default: downloading https://cobbler.github.io/loaders/COPYING.elilo to /var/lib/cobbler/loaders/COPYING.elilo
+    default: downloading https://cobbler.github.io/loaders/COPYING.yaboot to /var/lib/cobbler/loaders/COPYING.yaboot
+    default: downloading https://cobbler.github.io/loaders/COPYING.syslinux to /var/lib/cobbler/loaders/COPYING.syslinux
+    default: downloading https://cobbler.github.io/loaders/elilo-3.8-ia64.efi to /var/lib/cobbler/loaders/elilo-ia64.efi
+    default: downloading https://cobbler.github.io/loaders/yaboot-1.3.17 to /var/lib/cobbler/loaders/yaboot
+    default: downloading https://cobbler.github.io/loaders/pxelinux.0-3.86 to /var/lib/cobbler/loaders/pxelinux.0
+    default: downloading https://cobbler.github.io/loaders/menu.c32-3.86 to /var/lib/cobbler/loaders/menu.c32
+    default: downloading https://cobbler.github.io/loaders/grub-0.97-x86.efi to /var/lib/cobbler/loaders/grub-x86.efi
+    default: downloading https://cobbler.github.io/loaders/grub-0.97-x86_64.efi to /var/lib/cobbler/loaders/grub-x86_64.efi
+    default: *** TASK COMPLETE ***
+    default: task started: 2021-01-17_041613_sync
+    default: task started (id=Sync, time=Sun Jan 17 04:16:13 2021)
+    default: running pre-sync triggers
+    default: cleaning trees
+    default: removing: /var/lib/tftpboot/grub/images
+    default: copying bootloaders
+    default: copying: /var/lib/cobbler/loaders/pxelinux.0 -> /var/lib/tftpboot/pxelinux.0
+    default: copying: /var/lib/cobbler/loaders/menu.c32 -> /var/lib/tftpboot/menu.c32
+    default: copying: /var/lib/cobbler/loaders/yaboot -> /var/lib/tftpboot/yaboot
+    default: copying: /usr/share/syslinux/memdisk -> /var/lib/tftpboot/memdisk
+    default: copying: /var/lib/cobbler/loaders/grub-x86.efi -> /var/lib/tftpboot/grub/grub-x86.efi
+    default: copying: /var/lib/cobbler/loaders/grub-x86_64.efi -> /var/lib/tftpboot/grub/grub-x86_64.efi
+    default: copying distros to tftpboot
+    default: copying images
+    default: generating PXE configuration files
+    default: generating PXE menu structure
+    default: rendering TFTPD files
+    default: generating /etc/xinetd.d/tftp
+    default: cleaning link caches
+    default: running post-sync triggers
+    default: running python triggers from /var/lib/cobbler/triggers/sync/post/*
+    default: running python trigger cobbler.modules.sync_post_restart_services
+    default: running shell triggers from /var/lib/cobbler/triggers/sync/post/*
+    default: running python triggers from /var/lib/cobbler/triggers/change/*
+    default: running python trigger cobbler.modules.manage_genders
+    default: running python trigger cobbler.modules.scm_track
+    default: running shell triggers from /var/lib/cobbler/triggers/change/*
+    default: *** TASK COMPLETE ***
