@@ -1,5 +1,6 @@
 https://www.vagrantup.com/downloads
 http://mirrors.ustc.edu.cn/centos-cloud/centos/7/vagrant/x86_64/images/
+https://mirrors.tuna.tsinghua.edu.cn/ubuntu-cloud-images/
  vagrant box add centos/7 CentOS-7-x86_64-Vagrant-2004_01.VirtualBox.box
  vagrant init centos
  vagrant up
