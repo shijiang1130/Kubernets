@@ -1,0 +1,3 @@
+挂载BPF文件系统
+
+mount bpffs -t bpf /sys/fs/bpf
