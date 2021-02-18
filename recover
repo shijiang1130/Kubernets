@@ -1,0 +1,11 @@
+1.恢复/etc/kubernetes/pki/etcd/目录下的证书信息
+
+2、恢复备份至 /var/lib/etcd目录
+mkdir -p /var/lib/etcd
+docker run --rm \
+    -v '/home/shendu/backups/etcd:/backups' \
+    -v '/var/lib/etcd:/var/lib/etcd' \
+    --env ETCDCTL_API=3 \
+    'k8s.gcr.io/etcd:3.4.13-0' \
+    /bin/sh -c "etcdctl snapshot restore '/backup.db' ; mv /default.etcd/member/ /var/lib/etcd/"
+kubeadm init --ignore-preflight-errors=DirAvailable--var-lib-etcd
