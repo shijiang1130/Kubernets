@@ -1,3 +1,11 @@
+1.设置存储池副本数
+[root]# ceph osd pool get onepool size
+size: 2
+[root]# ceph osd pool set onepool size 3
+set pool 1 size to 1
+2.打印存储池列表
+ceph osd lspools
+
 [global]#全局设置
 fsid = xxxxxxxxxxxxxxx                           #集群标识ID 
 mon initial members = node1, node2, node3               #初始monitor (由创建monitor命令而定)
