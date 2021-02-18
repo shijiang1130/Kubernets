@@ -1,0 +1,42 @@
+my @hosts = ("a","b","c");
+my @certs = ("ca.crt","peer.crt","peer.key");
+
+foreach my $h (@hosts) {
+  print "$h\n";
+  mkdir $h if (! -d $h);
+  chdir $h;
+  foreach my $cert (@certs) {
+  if (! -e $cert) {
+   my $cmd = "scp root\@$h:/etc/kubernetes/pki/etcd/$cert  .";
+   print "$cmd\n";
+   my $ret = `$cmd`;
+ }
+
+##############################################################
+my $CACERT="./ca.pem";
+my $CERT="./peer.crt";
+my $EKY="./peer.key";
+my $ENDPOINTS="$h\:2379";
+
+my $ETCDCTL_API=3;
+my $backupcmd = "etcdctl --cert=$CERT --key=$EKY --endpoints=$ENDPOINTS --insecure-skip-tls-verify snapshot save /home/cis/k8sbackup/$h-etcd-snapshot-`date +%Y%m%d`.db";
+
+print $backupcmd;
+`$backupcmd`;
+
+##############################################################
+
+}
+chdir "../";
+
+}
+__END__
+date;
+CACERT="/opt/kubernetes/ssl/ca.pem"
+CERT="/etc/kubernetes/pki/etcd/peer.crt"
+EKY="/etc/kubernetes/pki/etcd/peer.key"
+ENDPOINTS="10.196.16.216:2379"
+
+ETCDCTL_API=3 etcdctl --cert="${CERT}" --key="${EKY}" \
+--endpoints=${ENDPOINTS} --insecure-skip-tls-verify \
+snapshot save /home/cis/k8sbackup/`hostname`-etcd-snapshot-`date +%Y%m%d`.db
