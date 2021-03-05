@@ -1,0 +1,4 @@
+ls /dev/disk/by-id/ -la
+"Buffer I/O error on dev dm-3"
+
+docker ps -a | grep Exi | awk '{print $1}' | xargs docker rm
